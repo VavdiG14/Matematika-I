@@ -1,0 +1,1474 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[slovene]{babel}
+\usepackage{amsthm,amsfonts,amsmath,amssymb,url}
+
+\textheight 210 true mm
+\textwidth 146 true mm
+\voffset=-17mm
+\hoffset=-13mm
+
+\newtheorem{Izrek}{{\sc Izrek}}[section]
+\newtheorem{Trditev}[Izrek]{{\sc Trditev}}
+\newtheorem{Posledica}[Izrek]{{\sc Posledica}}
+\newtheorem{Definicija}[Izrek]{{\sc Definicija}}
+\newtheorem{Zgled}[Izrek]{{\sc Zgled}}
+\newtheorem{Opomba}[Izrek]{{\sc Opomba}}
+\def\theIzrek{{\rm \arabic{section}.\arabic{Izrek}}}
+
+\newenvironment{izrek}{\begin{Izrek}\sl}{\end{Izrek}}
+\newenvironment{trditev}{\begin{Trditev}\sl}{\end{Trditev}}
+\newenvironment{posledica}{\begin{Posledica}\sl}{\end{Posledica}}
+\newenvironment{definicija}{\begin{Definicija}\rm }{\end{Definicija}}
+\newenvironment{zgled}{\begin{Zgled}\rm }{\end{Zgled}}
+\newenvironment{opomba}{\begin{Opomba}\rm }{\end{Opomba}}
+
+\newenvironment{dokaz}[1][{\sc Dokaz}]{\begin{proof}[#1]\renewcommand*{\qedsymbol}{\(\blacksquare\)}}{\end{proof}}
+
+\newcommand{\Mod}[1]{\hbox{ (mod } #1)}
+
+\begin{document}
+	
+	\thispagestyle{empty}
+	\begin{center}
+		\begin{Large}
+			{\bf Zapiski pri predmetu Matematika 1}
+		\end{Large}
+		
+	\end{center}
+	V zapiskih so zbrani osnovni izreki, definicije in nekaj dokazov, ki smo jih delali na predavanjih. Za učenje še vedno priporočam, da imate ob sebi zvezek s predavanj, ker vseh stvari ni spisanih.
+	Zapiske je potrebno razumeti kot minimalni katalog znanja.
+	Za napake ne odgovarjam. Posebna zahavala Blažu Poljancu, za pomoč pri nastajanju zapiskov.
+	\vfill
+	\begin{center}
+		Ljubljana, 2016 $\quad \quad $ Gregor Vavdi
+	\end{center}
+	\newpage
+	\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5TEVILA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\section{Števila}
+\subsection{Naravna števila}
+
+
+\begin{Definicija}
+	Z naravnimi števili štejemo. Na množici naravnih števil
+	$$N = {1, 2, 3, . . .}$$
+	sta naravno definirani računski operaciji:
+	\newline
+	$+$ seštevanje,
+	\newline
+	$\cdot$ množenje.
+	\newline
+	Pravimo, da je množica naravnih števil zaprta za seštevanje in množenje, saj sta vsota $a+b$ in podukt $a\cdot b$ poljubnih naravnih števil a in b tudi naravni števili. Naravnih števil ne moremo poljubno odštevati, saj npr. $5 - 7$ ni naravno število.
+ \newline
+	Množico naravnih števil je  \textbf{linearno urejena}:
+	če $m,n\in \mathbb{N}$,potem velja bodisi $m\le n$ ali $n \le m$.
+	\newline
+	in je \textbf{dobro urejena}: 
+	ima vsaka njena neprazna množica najmanjši element.
+\end{Definicija}
+\begin{Izrek}
+	(Načelo popolne indukcije): Vsaka podmnožica $A \subset \mathbb{N}$, ki vsebuje število 1 in v kateri je poleg števila n vselej tudi njegov naslednik, vsebuje vsa naravna števila :
+	$$(A \subset \mathbb{N}) \wedge (1 \in A) \wedge (n\in A \Rightarrow n^+ \in A) \Rightarrow A = \mathbb{N}$$
+\end{Izrek}
+\begin{Definicija}
+	$$m,n \in \mathbb{N}: m < n \iff \exists k \in \mathbb{N}: n = m + k$$
+	$$m,n \in \mathbb{N}: m \le n \iff m < n \lor m = n$$
+\end{Definicija}
+
+\subsection{Cela števila}
+\begin{Definicija}
+	Računske operacije z množico naravnih števil $\mathbb{N}$ na množico \textbf{celih števil} $\mathbb{Z}$. Na množici celih števil:
+	$$\mathbb{Z} = \{\cdots, -2, -1,0 ,1,2,\cdots\}$$
+	definiramo tri računske operacije:
+	\newline
+	$+$ seštevanje
+	\newline
+	$\cdot$ množenje
+	\newline
+	$-$ odštevanje
+	\newline
+	Pravimo, da je množica celih števil zaprta za seštevanje odštevanje in množenje. 
+	\newline
+	Množica celih števil je \textbf{linearno urejena}: poljubni celi števili lahko primerjamo po velikosti
+	\newline
+	\textbf{ni dobro urejena}: ker nima najmanjšega elementa.
+	
+\end{Definicija}
+
+\subsection{Racionalna števila}
+
+\begin{Definicija}
+	Racionalna števila so ulomki oblike:
+	$$\frac{m}{n} \quad m\in \mathbb{Z},\quad n\in\mathbb{N}$$
+	Množica $\mathbb{Q}$ je komutativni obseg. (sešetvanje in množenje).
+	\newline
+	Velja:
+	$$\frac{m}{n} < \frac{k}{l} \iff \exists \frac{i}{j}\quad i,j\in\mathbb{N}\Rightarrow \frac{m}{n} + \frac{i}{j} = \frac{k}{l}$$
+\end{Definicija}
+\begin{Trditev}
+	Decimalno število, ki ima periodičen decimalni zapis je racionalno število.
+\end{Trditev}
+\begin{Opomba}
+	Velja tudi obratno, vsako racionalno število ima (končen ali) periodičen decimalni zapis.
+\end{Opomba}
+
+\subsection{Realna števila}
+\begin{Definicija}
+	Realna števila so vsa števila, racionalna in iracionalna števila. Množico realnih števil označimo s $\mathbb{R}$. Realna števila so komutativni obseg.
+	\\
+	Realna števila imajo decimalni zapis. Če je decimalni zapis končen ali periodičen je število racionalno, sicer je število iracionalno.
+	\\
+	Vsakemu realnemu številu ustreza točka na številski premici in vsaki točki na številski premici ustreza realno število.
+	\\
+	Množica realnih števil je linearno urejena.
+\end{Definicija}
+\begin{Trditev}
+	Vsak odprt interval vsebuje racionalno število
+\end{Trditev}
+\begin{Opomba}
+	Racionalna števila so gosta v realnih številih.
+\end{Opomba}
+\begin{Trditev}
+	Na vsakem intervalu leži iracionalno število.
+\end{Trditev}
+\begin{Definicija}
+	$$\sqrt[m]{a}$$ je tisto pozitivno realno število, za katerega velja $ a = b^m$. Število b imenujemo \textbf{m-ti koren od a}.
+\end{Definicija}
+\subsection{Absolutna vrednost}
+\begin{Definicija}
+	Naj bo $x\in \mathbb{R}$. \textbf{Absolutna vrednost} $|x|$ je:
+	\begin{displaymath}
+	|x| = \left\{ \begin{array}{cc}
+	 x & \textrm{$x\ge 0$},\\
+	-x & \textrm{$x <0$}.
+	\end{array} \right.
+	\end{displaymath}
+\end{Definicija}
+\begin{Trditev}
+	Lastnosti absolutne vrednosti:
+	\begin{enumerate}
+		\item
+		$|x| \ge 0 \quad \forall x\in\mathbb{R}$
+		\item
+		$|x| = 0 \iff x = 0$
+		\item
+		$|-x| = |x|$
+		\item
+		$ -|x| \le x\le |x|$
+		\item
+		Geometrijski pomen $|x-y|$ - razdalja med x in y.
+		\item
+		$|x\cdot y| = |x| \cdot |y| \quad x,y\in \mathbb{R}$
+		\item
+		$|x+y| \le |x| +|y| \quad x,y\in \mathbb{R}$ - Trikotniška neenakost
+		\item
+		$||x| -|y|| \le |x\pm y| \le |x| + |y| \quad x,y\in \mathbb{R}$
+		\item
+		$|x_1 + x-2 +x_3 + \dots + x_n| \le |x_1| +|x_2| +|x_3| + \dots + |x_n| \quad \forall x_1,x_2,\dots, x_n$
+		\item
+		$|x| \le c \iff -c \le x \le c \quad c>0$
+		\item
+		$|x| \ge c \iff x \ge c$ ali $x \le -c$
+	\end{enumerate}
+\end{Trditev}
+\subsection{Kompleksna števila}
+\begin{Definicija}
+	Množica kompleksnih števil je množica oblike \\ $z = a + ib \quad a,b\in \mathbb{R}$
+	$$\mathbb{C} = \{a + ib: a,b\in \mathbb{R}\}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $ z = a +bi \in \mathbb{C}$.\\ Realni del števila z je realno število a: $\Re(z) = a$
+	\\ Imaginarni del števila z je realno število b: $\Im(z) = b$.
+\end{Definicija}
+\begin{Trditev}
+	\begin{enumerate}
+		\item
+		Konjugacija kompleksnega števila:
+		\\ 
+		Naj bo $ z = a +bi \in \mathbb{C}$. Potem je konjugirano število $\bar{z} = a - bi$
+		\item
+		Absolutna vrednost kompleksnega števila
+		\\
+		Naj bo $z = a+bi \in \mathbb{C}$. Absolutna vrednost kompleksnega števila je nenegativno realno število: $|z| = \sqrt{a^2 + b^2}$.
+		\item
+		Enakost kompleksnih števil.
+		\\
+		Naj bosta $z, w$ kompleksni števili. $z =w$ natanko tedaj ko velja: $\Re(z) = \Re(w)$ in $\Im(z) =\Im(z)$.
+		\item
+		Seštevanje kompleksnih števil
+		\\
+		Naj bosta $z = a+ bi$ in $w = c+ di$ kompleksni števili. $$z + w = (a+c) + (b+d)i$$
+		\item
+		Množenje kompleksnih števil
+		\\
+		Naj bosta $z = a+bi$ in $ w = c + di$ kompleskni števili.
+		$$ z\cdot w = (ac - bd) + (ad + bc)i$$
+	\end{enumerate}
+\end{Trditev}
+\begin{Opomba}
+	$\mathbb{C}$ ni linearno urejena. Zato zapis $z < w$ nima smisla.
+\end{Opomba}
+\begin{Trditev}
+	Lastnosti konugacije:
+	\\
+	Naj bosta $z,w \in \mathbb{C}$
+	\begin{enumerate}
+		\item
+		$\bar{\bar{z}} = z$
+		\item
+		$ z =\bar{z} \iff z \in \mathbb{R}$
+		\item
+		$ z + \bar{z} = 2\Re(z)$
+		\item
+		$\bar{z+w} = \bar{z} + \bar{w}$
+		\item
+		$\bar{z\cdot w} = \bar{z}\cdot \bar{w}$
+	\end{enumerate}
+\end{Trditev}
+\begin{Trditev}
+	Lastnosti absolutne vrednosti:
+	\begin{enumerate}
+		\item
+		$|z| \ge 0$
+		\item
+		$|\Re(z)| \le |z|$
+		\item
+		$|\Im(z)| \le |z|$
+		\item
+		$|z\cdot w| = |z| \cdot |w|$
+		\item
+		$|z+w| \le |z| +|w|$
+	\end{enumerate}
+\end{Trditev}
+
+\begin{Izrek}
+	(Osnovni izrek algebre) \\
+	Naj bo $p(z) = a_nz^n + a_{n-1}z^{n-1} + \dots + a_1z^1 + a_0 \quad n\in\mathbb{N}, n\ge 1, a_n \ne 0$. Potem obstaja kompleksno število  $z_0 \in\mathbb{C} : p(z_0 ) = 0$.
+\end{Izrek}
+\begin{Posledica}
+	Vsak polinom stopnje $n\ge 1$ ima n kompleksnih ničel štetih z večkratnostjo.
+\end{Posledica}
+\begin{Trditev}
+	Naj bo $p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x^1 + a_0$ polinom z realnimi koeficienti: $a_o,a_1, \dots, a_n \in \mathbb{R}$. Če je $p(z) = 0 $, za nek $z\in \mathbb{C}$, potem $p(\bar{z}) = 0$.
+\end{Trditev}
+\begin{Posledica}
+	Vsak polinom z realnimi koeficienti, tj. $p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x^1 + a_0$ lahko v realnem rezcepimo do linearnih in kvadratnih nerazcepnih faktorjev.
+\end{Posledica}
+\section{Množice}
+\begin{Definicija}
+	Množica je zbirka objektov, ki jih imenujemo elementi množice. Če x priprada množici A, pišemo $x\in A$ in rečemo x je element množice A.
+	Če x ne pripada množici A, pišemo: $\quad x\notin A$.
+\end{Definicija}
+\begin{Definicija}
+	Prazna množica je množica, ki nima nobenega elementa. \\
+	Pišemo: $\emptyset = \{\}$
+	\\
+	Množici A in B sta enaki, kadar vsebujeta iste elemente: $A=B$. Množici sta enaki, če in samo če velja:
+	\\
+	Za vsak $x\in A$, potem velja $x\in B$ in
+	\\
+	Za vsak $x\in B$, velja $x\in A$.
+	\\
+	Pravimo, da je A podmnožica množice B, če za vsak $x\in A $ velja $x\in B$, pišemo $A\subset B$.
+\end{Definicija}
+\begin{Definicija}
+	\textbf{Unija} množice A in B je množica, ki vsebuje vse elemente množice A in vse elemente množice B. 
+	$$A \cup B = \{x: x\in A \lor x\in B\}$$
+\end{Definicija}
+\begin{Definicija}
+	\textbf{Presek} množice A in B je množica, ki je sestavljena iz elementov x, ki pripadajo A in B.
+	$$A\cap U = \{x: x\in A \land  x \in B\}$$
+\end{Definicija}
+\begin{Opomba}
+	Pravimo, da sta množici \textbf{disjunktni}, če je $A\cap B = \emptyset$.
+\end{Opomba}
+\begin{Definicija}
+	Če najprej predpišemo množico, tako da so vse množice s katerimi računamo njene podmnožice, to množico imenujemo \textbf{univerzalna množica } $\mathcal{U}$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $A \subset \mathcal{U}$. \textbf{Komplement množice} A je množica vseh elementov $x\in \mathcal{U}$, ki ne pripadajo A.
+	$$A^C = \{x\in\mathcal{U}: x\notin A \}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bosta A in B množici. \textbf{Razlika} množice A in B je množica, ki vsebuje vse tiste elemente množice A, ki ne ležijo v B.
+	$$A\backslash B = \{x: x\in A \land x\notin B \}$$
+	Lastnost: $A^C = \mathcal{U}\backslash A$.
+\end{Definicija}
+\begin{Definicija}
+	\textbf{Kartezični produkt} množice A in B je množica urejenih parov $(a,b)$, kjer je $a\in A$ in $b\in B$.
+	$$A \times B = \{(a,b): a\in A \land b\in B \}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo S podmnožica $\mathbb{R}$. Če obstaja tak $M\in\mathbb{R}$,da je $x\le M$ za vsak $x\in S$, pravimo, da je \textbf{M zgornja meja} množice S.
+	\\
+	Če ima S kakšno zgornjo mejo, pravimo, da je S \textbf{navzgor omejena}. Če je $M$ zgornja meja množice S, je tudi vsako število, ki je večje od M, zgornja meja množice S.
+	\\
+	Pomembna je najmanjša zgornja meja, ki se imenuje natančna zgornja meja ali \textbf{supremum} množice S in jo označimo s $\sup S$.
+\end{Definicija}
+\begin{Definicija}
+	(Dedekindov aksiom) Vsaka neprazna, navzgor omejena množica realnih števil ima neko realno število za natančno zgornjo mejo.
+\end{Definicija}
+\begin{Opomba}
+	Dedakindov aksiom ne velja za racionalna števila.
+\end{Opomba}
+\begin{Opomba}
+	Naj bo S neprazna množica navzgor omejena podmnožica v $\mathbb{R}$. $\alpha = \sup S$ natanko tedaj, ko veljata:
+	\begin{enumerate}
+		\item
+		$\alpha$ je zgornja meja množice S, to je:
+		$$ s\le \alpha \quad \forall s\in S$$
+		\item
+		$\alpha$ je med vsemi zgornjimi mejami množice S najmanjša, to je:
+		$$\forall \beta < \alpha \quad \exists s\in S \Rightarrow s >\beta$$
+	\end{enumerate}
+\end{Opomba}
+\begin{Definicija}
+	Naj bo S podmnožica $\mathbb{R}$. Če obstaja tak $m\in\mathbb{R}$,da je $x\ge m$ za vsak $x\in S$, pravimo, da je \textbf{M spodnja meja} množice S.
+	\\
+	Če ima S kakšno spodnjo mejo, pravimo, da je S \textbf{navzdol omejena}. Največja spodnja meja,če obstaja, imenujemo \textbf{infimum} množice S in jo označimo z $\inf S$.
+\end{Definicija}
+\section{Številska zaporedja}
+
+\begin{Definicija}
+	Funkciji $f: \mathbb{N}\to \mathbb{R}$ rečemo \textbf{realno zaporedje}. Označimo $a_n = f(n)$ in $a_n$ imenujemo $n$-ti člen zaporedja. Zaporedje lahko podamo z $a_1, a_2, a_3,...$ ali pa na kratko $\{a_n\}_{n\in \mathbb{N}}$.
+\end{Definicija}
+
+\begin{Definicija}
+	Naj bo $\{a_n\}_{n\in \mathbb{N}}$ realno zaporedje:
+	\\
+	\indent če velja $a_n \le a_{n+1},\forall n \in \mathbb{N}$, pravimo, da je zaporedje \textbf{naraščajoče}.
+	\\
+	\indent	če velja $a_n < a_{n+1},\forall n \in \mathbb{N}$, pravimo, da je zaporedje \textbf{strogo naraščajoče}.
+	\\
+	\indent če velja $a_n \ge a_{n+1},\forall n \in \mathbb{N}$, pravimo, da je zaporedje \textbf{padajoče}.
+	\\
+	\indent če velja $a_n > a_{n+1},\forall n \in \mathbb{N}$, pravimo, da je zaporedje \textbf{strogo padajoče}.
+\end{Definicija}
+
+\begin{Definicija}
+	Naj bo $\{a_n\}_{n\in \mathbb{N}}$ realno zaporedje. Zaporedje je \textbf{monotono}, če bodisi naraščajoče, bodisi padajoče.
+	Zaporedje je \textbf{strogo monotono}, če je bodisi strogo naraščajoče, bodisi strogo padajoče.
+\end{Definicija}
+
+\begin{Definicija}
+	Zgornja meja zaporedja $\{a_n\}_{n\in \mathbb{N}}$ je zgornja meja množice $\{a_1, a_2,a_3,...\}$. Če obstaja kakšna zgornja meja, potem pravimo, da je zaporedje \textbf{navzgor omejeno}. V tem primeru najmanjšo zgornjo mejo imenujemo \textbf{supremum}.
+\end{Definicija}
+
+\begin{Definicija}
+		Naj bo $\{a_n\}_{n\in \mathbb{N}}$ zaporedje realnih števil. \textbf{Stekališče} zaporedja  $\{a_n\}_{n\in \mathbb{N}}$ je tako število $s \in \mathbb{R}$, da je za vsak $\varepsilon > 0$, velja $| s - a_n | < \varepsilon$, za neskončno mnogo indeksov $n\in\mathbb{N}$.
+\end{Definicija}
+\begin{Opomba}
+	Število $s$ je stekališče zaporedja $\{a_n\}_{n\in \mathbb{N}}$, natanko tedaj, kadar v njegovi $\varepsilon$- okolici leži neskončno mnogo členov zaporedja.
+\end{Opomba}
+
+\begin{Izrek}
+	Vsako omejeno zaporedje ima stekališče.
+\end{Izrek}
+
+
+\begin{dokaz}
+	
+	$\exists m, M : m \le a_n \le M$ za vsak $n\in \mathbb{N}$. Dokazujemo da ima  $\{a_n\}_{n\in \mathbb{N}}$ stekališče.
+	\\
+	$S = \{s; a_n < s$ kvečejmu za končno mnogo indeksov $n\}$.
+	\\
+	$S \ne \{ \emptyset\} \to $ če je $s<m , s\in S$.
+	\\
+	Naj obstaja $\alpha = \sup{S}$.
+	Iz tega sledi, da je $S$ navzgor omejena: $s>M$. Iz tega pa sledi, da je $\alpha$ stekaliišče zaporedja.
+\end{dokaz}
+
+\begin{Definicija}
+	Naj bo $\{a_n\}_{n\in \mathbb{N}}$ zaporedje realnih števil. Število $L\in \mathbb{R}$ je\textbf{ limita zaporedja} $\{a_n\}_{n\in \mathbb{N}}$, če zunaj vsake $\varepsilon$-okolice števila $L$ leži kvečejmu končno mnogo členov zaporedja.
+	\\
+	\\
+	$L\in \mathbb{R}$ je limita zaporedja $\{a_n\}_{n\in \mathbb{N}}$, če za vsako $\varepsilon > 0$, obstaja $n_\varepsilon \in \mathbb{N}$, da za vsako  $n\in \mathbb{N}, n \ge n_\varepsilon$, velja $|a_n - L| < \varepsilon$.
+\end{Definicija}
+
+\begin{Definicija}
+	Zaporedje $\{a_n\}_{n\in \mathbb{N}}$ je \textbf{konvergentno}, če ima limito.
+\end{Definicija}
+
+\begin{Opomba}
+	Če je $L$ limita zaporedja, potem je $L$ tudi stekališče tega zaporedja. Obratno ni nujno res.
+\end{Opomba}
+
+\begin{dokaz}
+	Denimo, da je $L$ limita zaporedja $\{a_n\}_{n\in \mathbb{N}}$. Dokazujemo, da je $L$ stekališče zaporedja $\{a_n\}_{n\in \mathbb{N}}$.
+	\\
+	Izberemo $\varepsilon > 0$. Ker je $L$ limita  $\{a_n\}_{n\in \mathbb{N}}$, leži zunaj intervala $(L -\varepsilon, L + \varepsilon)$, kvečejmo končno mnogo členov zaporedja. Vseh drugih, teh je neskončno mnogo ležijo znotraj intevala $(L -\varepsilon, L + \varepsilon)$. Iz tega sledi,da je $L$ stekališče zaporedja.
+	
+\end{dokaz}
+
+\begin{Trditev}
+	Če ima zaporedje več kot eno stekališče, potem ni konvergentno.
+\end{Trditev}
+\begin{dokaz}
+	Naj bosta $s_1$ in $s_2$ različni stekališči zaporedja $\{a_n\}_{n\in \mathbb{N}}$.
+	Dokazujemo, da $s_1$ ni limita zaporedja.
+	\\
+	Naj bo $d = \frac{1}{3}|s_1 - s_2|$.
+	\\
+	 Na intervalu $(s_2 - d, s_2 + d)$ leži neskončno mnogo členov zaporedja. Ker velja: $(s_1 -d, s_1+d) \cap (s_2 - d, s_2 + d) = \emptyset$, zato zunaj 	$(s_1 -d, s_1+d)$ leži končno mnogo členov zaporedja. Torej $s_1$ ni limita zaporedja. Simetrično tudi $s_2$ ni limita zaporedja. Nobeno število, ki ni stekališče, ni limita, torej zaporedje nima limite.
+\end{dokaz}
+\begin{Posledica}
+	Konvergentno zaporedje ima natanko eno stekališče.
+\end{Posledica}
+\begin{dokaz}
+	Limita zaporedja je tudi stekališče zaporedja in po trditvi je tudi edino stekališče.
+\end{dokaz}
+\begin{Izrek}
+	Naraščajoče in navzgor omejeno zaporedje je konveregentno. Njegova limita je njegova natančna zgornja meja (supremum).
+	\\
+	Padajoče in navzdol omejeno zaporedje je konvergentno. Njegova limita je njegova natančna spodnja meja (infimum).
+\end{Izrek}
+\begin{dokaz}
+	Naj bo $\{a_n\}_{n\in \mathbb{N}}$ naraščajoče in navzgor omejeno zaporedje.\\
+	Naj bo $\alpha = \sup{\{a_n\}_{n\in \mathbb{N}}}$. Dokazujemo,da je $\alpha$ limita zaporedja.
+	\\
+	Ker je $\alpha$ natančna zgornja meja zaporedja, torej $\alpha - \varepsilon$ ni zgornja meja zaporedja.
+	\\
+	Torej obstaja: $a_n > \alpha - \varepsilon$
+	\\
+	$\alpha - \varepsilon < a_n \le a_{n+1} \le \alpha$
+	\\
+	$\alpha - \varepsilon < a_{n+k} < \alpha \quad \forall k \in \mathbb{N}$
+	\\
+	$a_{n+k} \in (\alpha - \varepsilon, \alpha)$
+	\\
+	Torej je $\alpha$ po definiciji, limita zaporedja.
+\end{dokaz}
+\begin{Opomba}
+	Če je zaporedje konvergentno, potem je omejeno.
+\end{Opomba}
+\begin{dokaz}
+	Denimo, da je $\{a_n\}_{n\in \mathbb{N}}$ konvergentno. Z $L$ označimo limito zaporedja.
+	\\
+	Zunaj intervala $(L - 1, L+ 1)$ leži kvečejmo končno mnogo členov zaporedja. Med njimi lahko izberemo najmanjše in največje število. To pomeni, da je zaporedje omejeno.
+	\\
+	Namesto $1$ bi lahko vzeli $\varepsilon > 0$.
+\end{dokaz}
+\begin{Definicija}
+	Naj bosta $\{a_n\}_{n\in \mathbb{N}}$ in $\{b_n\}_{n\in \mathbb{N}}$ konvergentni zaporedji. Zaporedje $a_1 + b_1, a_2 + b_2,..., a_n + b_n, ... $ imenujemo vsota zaporedja $\{a_n\}_{n\in \mathbb{N}}$ in $\{b_n\}_{n\in \mathbb{N}}$ in označimo $\{a_n + b_n\}_{n\in \mathbb{N}}$.
+	\\
+	Podobno:
+	\\
+	razlika zaporedja  - $\{a_n - b_n\}_{n\in \mathbb{N}}$.
+	\\
+	produkt zapordja - $\{a_n \cdot b_n\}_{n\in \mathbb{N}}$.
+	\\
+	kvocientno zaporedje - $\{\frac{a_n}{b_n}\}_{n\in \mathbb{N}}$, če velja $b_n \ne 0, \forall n\in \mathbb{N}$.
+\end{Definicija}
+\begin{Izrek}
+	Naj bosta $\{a_n\}_{n\in \mathbb{N}}$ in $\{b_n\}_{n\in \mathbb{N}}$ konvergentni zaporedji. Potem so zaporedja $\{a_n + b_n\}_{n\in \mathbb{N}}$,  $\{a_n - b_n\}_{n\in \mathbb{N}}$, $\{a_n \cdot b_n\}_{n\in \mathbb{N}}$ konvergentna zporedja in velja:
+	$$\lim\limits_{n \to \infty}{(a_n + b_n)} = \lim\limits_{n \to \infty}{a_n} + \lim\limits_{n \to \infty}{b_n}$$
+	$$\lim\limits_{n \to \infty}{(a_n - b_n)} = \lim\limits_{n \to \infty}{a_n} - \lim\limits_{n \to \infty}{b_n}$$
+	$$\lim\limits_{n \to \infty}{(a_n \cdot b_n)} = \lim\limits_{n \to \infty}{a_n} \cdot \lim\limits_{n \to \infty}{b_n}$$
+	Če velja $b_n \ne 0, \forall n\in \mathbb{N}$ in $\lim\limits_{n \to \infty}{b_n} \ne 0$, potem je zaporedje $\{\frac{a_n}{b_n}\}_{n\in \mathbb{N}}$ konvergentno in velja: $$\lim\limits_{n \to \infty}{\frac{a_n}{b_n}} = \frac{\lim\limits_{n \to \infty}{a_n}}{\lim\limits_{n \to \infty}{b_n}}$$
+\end{Izrek}	
+\begin{Posledica}
+	Če je zaporedje  $\{a_n\}_{n\in \mathbb{N}}$ konvergentno in $c \in \mathbb{R}$, potem je \newline $\{c \cdot a_n\}_{n\in \mathbb{N}}$ konvergentno zaporedje in velja:
+	$$\lim\limits_{n \to \infty}{(c \cdot a_n)} = c \cdot  \lim\limits_{n \to \infty}{a_n}$$
+\end{Posledica}
+
+\begin{Trditev}
+	Naj bosta  $\{a_n\}_{n\in \mathbb{N}}$ in $\{b_n\}_{n\in \mathbb{N}}$ konvergentni zaporedji.
+	\\
+	\indent Če velja $a_n \le b_n$ za vse $n\in\mathbb{N}$, potem velja $\lim\limits_{n \to \infty}{a_n} \le \lim\limits_{n \to \infty}{b_n}$.
+	\\
+	\indent Če velja $a_n < b_n$ za vse $n\in\mathbb{N}$, potem velja $\lim\limits_{n \to \infty}{a_n} \le \lim\limits_{n \to \infty}{b_n}$.
+	\\
+	\indent Opomba: V limiti se lahko pojavi enačaj!
+\end{Trditev}
+\begin{Definicija}
+	Naj bo $\{a_n\}_{n\in \mathbb{N}}$ zaporedje in naj bo $\{p\}_{n\in \mathbb{N}}$ strogo naraščajoče zaporedje naravnih števil. Potem imenujemo zaporedje $b_n = a_{p_n}$ \textbf{podzaporedje} zaporedja $\{a_n\}_{n\in \mathbb{N}}$.
+\end{Definicija}
+\begin{Izrek}
+	Naj bo $\{a_n\}_{n\in \mathbb{N}}$ zaporedje in $s\in \mathbb{R}$ stekališče zaporedja $\{a_n\}_{n\in \mathbb{N}}$. Potem obstaja konvergentno pozaporedje zaporedja $\{a_n\}_{n\in \mathbb{N}}$, ki konvergira proti $s$.
+\end{Izrek}
+\begin{dokaz}
+	Naj bo $s$ stekališče $\{a_n\}_{n\in \mathbb{N}}$.
+	Obstaja : $a_{n_1} \in (s -1, s + 1)$
+	\\
+	$a_{n_2}\in (s - \frac{1}{2}, s +  \frac{1}{2})$ in $n_2 > n_1$, zato ker je na intervalu $(s - \frac{1}{2}, s +  \frac{1}{2})$ neskončno mnogo členov zaporedja, samo končno mnogo jih ima premajhen indeks.
+	\\
+	Nadaljujemo na enak način in dobimo podzaporedje:
+	$a_{n_1}, a_{n_2}, a_{n_3},\dots$, ker so \newline $n_1 < n_2 < n_3 < \dots$ in $ a_{n_k} \in (s - \frac{1}{k}, s +  \frac{1}{k})$, velja:
+	$$\lim\limits_{n \to \infty}{a_{n_k}} = s.$$
+\end{dokaz}
+\begin{Izrek}
+	Naj bo  $\{a_n\}_{n\in \mathbb{N}}$ zaporedje. Če je $L$ limita konvergentnega podzaporedja zaporedja  $\{a_n\}_{n\in \mathbb{N}}$, potem je $L$ stekališče zaporedja  $\{a_n\}_{n\in \mathbb{N}}$.
+\end{Izrek}
+\begin{dokaz}
+	Denimo, da je $L$ limita podzaporedja. Potem $\forall \varepsilon > 0$ na $(L - \varepsilon, L + \varepsilon)$ ležijo vsi, razen kvečejmu končno mnogo členov podzaporedja. Torej na intervalu $(L - \varepsilon, L + \varepsilon)$ leži neskončno členov zaporedja. Zato je $L$ stekališče.
+\end{dokaz}
+\begin{Posledica}
+	Vsako omejeno zaporedje ima konvergentno podzaporedje.
+\end{Posledica}
+\begin{dokaz}
+	Vsako omejeno zaporedje ima stekališče $s$. Po prejšnem izreku obstaja podzaporedje, ki konvergira k $s$.
+\end{dokaz}
+\begin{Trditev}
+	Naj bo $L$ limita zaporedja  $\{a_n\}_{n\in \mathbb{N}}$.
+	$$\lim\limits_{n \to \infty}{a_n} = L$$
+	Tedaj vsako podzaporedje  $\{a_{n_j}\}_{j\in \mathbb{N}}$ konvergira k $L$.
+\end{Trditev}
+\begin{Trditev}
+	Naj bo  $\{a_n\}_{n\in \mathbb{N}}$ zaporedje. Tedaj velja:
+	$$\lim\limits_{n \to \infty}{a_n} = 0 \iff \lim\limits_{n \to \infty}{|a_n|} = 0$$
+\end{Trditev}
+\begin{Trditev}
+	Naj za zaporedja  $\{a_n\}_{n\in \mathbb{N}}$,  $\{b_n\}_{n\in \mathbb{N}}$,  $\{c_n\}_{n\in \mathbb{N}}$, velja $ b_n <a_n < c_n$.
+	Iz tega sledi, da če je:
+	$$ \lim\limits_{n \to \infty}{b_n} = 0 \quad   in  \quad \lim\limits_{n \to \infty}{c_n} = 0 \ \Rightarrow \lim\limits_{n \to \infty}{a_n} = 0$$
+\end{Trditev}
+
+\begin{Definicija}
+	Zaporedje  $\{a_n\}_{n\in \mathbb{N}}$ je \textbf{Cauchijevo}, če za vsak $\varepsilon > 0, \exists n_0$,\newline$ n,m >n_0$, velja $|a_n - a_m| < \varepsilon$.
+\end{Definicija}
+\begin{Izrek}
+	Zaporedje $\{a_n\}_{n\in \mathbb{N}}$ je Cauchijevo $\iff$ ko je konvergentno.
+\end{Izrek}
+
+\begin{Definicija}
+	Zaporedje $\{a_n\}_{n\in \mathbb{N}}$ konvergira k  $ + \infty$, če za vsak $M, \exists n_0, \forall n \ge n_0$ velja $M < a_n$. (Tako zaporedje NE konvergira).
+	\\
+	\indent Zaporedje $\{a_n\}_{n\in \mathbb{N}}$ konvergira k  $ - \infty$, če za vsak $M, \exists n_0, \forall n \ge n_0$ velja $M > a_n$.
+\end{Definicija}
+
+\pagebreak
+\section{Številske vrste}
+
+\begin{Definicija}
+	Pravimo,da je številska vrsta $\sum_{k = 1}^{\infty}{a_k}$ \textbf{konvergentna}, če je konvergentno pripadajoče zaporedje delnih vsot  $\{s_n\}_{n\in \mathbb{N}}$.
+	Vsota vrste je limita zaporedja delnih vsot, če obstaja. Če zaporedje  $\{s_n\}_{n\in \mathbb{N}}$ divergira, pravimo, da vrsta divergira.
+\end{Definicija}
+\begin{Trditev}
+	Če vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira, potem zaporedje  $\{a_n\}_{n\in \mathbb{N}}$ konvergentno in ima $\lim\limits_{n \to \infty}{a_n} = 0$.
+	\\
+	Obratno ne velja!
+\end{Trditev}
+\begin{dokaz}
+	Denimo, da vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira. Torej zaporedje delnih vsot  $\{s_n\}_{n\in \mathbb{N}}$ konvergira.
+\end{dokaz}
+\begin{Trditev}
+	Denimo, da sta vrsti $\sum_{n = 1}^{\infty}{a_n}$ in $\sum_{n = 1}^{\infty}{b_n}$ konvergentni in $c \in \mathbb{R}$. Potem so tudi vrste $\sum_{n = 1}^{\infty}{(a_n+ b_n)}$, $\sum_{n = 1}^{\infty}{(a_n - b_n)}$  in $\sum_{n = 1}^{\infty}{c \cdot a_n}$ konvergentne. 
+\end{Trditev}
+
+\begin{dokaz}
+	Naj bosta $s_n := a_1 + a_2 + \dots + a_n$ in $t_n := b_1 + b_2 + \dots + b_n$ zaporedje delnih vsot. Ker sta vrsti konvergentni, sta $\{s_n\}$ in $\{t_n\}$ konvergentni. Dokazujemo, da je vrsta $\sum_{n = 1}^{\infty}{(a_n+ b_n)}$ konvergentna.
+	\\
+	Njeno zaporedje delnih vsot $u_n = (a_1 + b_1) + (a_2 + b_2) + \dots + (a_n + b_n) = s_n + t_n$ Ker sta $s_n$ in $t_n$ konvergentni zaporedji je tudi $u_n$ konvergentno zaporedje. Iz tega lahko sklepamo, da je tudi vsota $\sum_{n = 1}^{\infty}{(a_n+ b_n)}$ konvergentna.
+\end{dokaz}
+\begin{zgled}
+	Vrsta $ 1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n} + \dots = \sum_{n = 1}^{\infty}$ se imenuje \textbf{harmonična vrsta}. Harmonična vrsta divergira.
+	\\
+	\\
+	Vrsta $a + aq + aq^2 +aq^3 + \dots + aq^n + \dots = \sum_{n = 1}^{\infty} \quad a\in \mathbb{R}\backslash \{0\}, \quad q\in \mathbb{R} \backslash \{1\}$ imenujemo \textbf{geometrijska vrsta}. Geometrijska vrsta konvergira natanko tedaj ko je $|q| < 1$, potem je njena vsota $ \frac{a}{1 - q}$.
+\end{zgled}
+\subsection{Kriteriji za konvergenco vrst}
+
+\begin{Izrek}
+ 	(Cauchyjev kriterij) Naj bo $\sum_{n = 1}^{\infty}{a_n}$ dana številska vrsta. $\sum_{n = 1}^{\infty}{a_n}$ konvergira natanko tedaj kadar za vsak $\varepsilon > 0$, obstaja $n_\varepsilon \in \mathbb{N}$, da za vsak $n,m > n_\varepsilon, n,m\in \mathbb{N}$ velja:
+ 	$$ |a_m + a_{m+1} + \dots + a_n| < \varepsilon$$
+\end{Izrek}
+\begin{Opomba}
+	Pogoj na desni se imenuje Cauchijev pogoj. Spomni se na Cauchyjevo zaporedje.
+\end{Opomba}
+\begin{Izrek}
+	(Primerjalni kriterij 1) Naj bo $\sum_{n = 1}^{\infty}{c_n}$ konvergentna vrsta z nenegativnimi členi. Če velja $$0 \le a_n \le c_n$$ za vsak $n\in \mathbb{N}$, potem $a_n$ konvergira.
+\end{Izrek}
+\begin{dokaz}
+	Naj bo $t_n = c_1 + c_2 + \dots + c_n$ in naj bo $s_n = a_1 + a_2 + \dots + a_n$.
+	\\
+	Ker imamo vrste z nenegativnimi členi, sta $\{t_n\}_{n\in \mathbb{N}}$ in $\{s_n\}_{n\in \mathbb{N}}$ naraščajoči zaporedji. Ker je $\sum_{n =1}^{\infty}{c_n}$ konvergentna, je tudi $\{t_n\}_{n\in \mathbb{N}}$ konvergentno zaporedje.
+	\\
+	Ker je $ \le a_n \le c_n \quad   \forall n$,  velja: $0 \le s_n \le t_n \quad \forall n$.
+	\\ 
+	Ker je $\{t_n\}$ konvergentno je tudi omejeno : $t_n \le M \quad \forall n$. Iz zgornje neenakosti sledi: $ s_n \le M \quad \forall n$. Kar pa pomeni, da je $\{s_n\}$ konvergentno zaporedje, saj je naraščajoče in omejeno.
+\end{dokaz}
+\begin{Izrek}
+	(Primerjalni kriterij 2) Naj bo $\sum_{n = 1}^{\infty}{d_n}$ divergentna vrsta z nenegativnimi členi in če velja $$ 0 \le d_n \le b_n$$, potem je tudi $\sum_{n = 1}^{\infty}{b_n}$ divergentno.
+\end{Izrek}
+\begin{dokaz}
+	$\forall n \quad  0 <d_1 + d_2 + \dots + d_n < b_1 + b_2 + \dots + b_n$.
+	\\
+	Ker $\sum_{n = 1}^{\infty}{d_n}$ divergira in ima pozitivne člene, je zaporedje njenih delnih vsot neomejeno. Zato je tudi zaporedje $\{b_1, b_2, \dots , b_n\}$ neomejeno.
+\end{dokaz}
+\begin{Izrek}
+	(Kvocientni kriterij) Naj bo $\sum_{n = 1}^{\infty}{a_n}$ vrsta s pozitivnimi členi. Denimo da je zaporedje $d_n = \frac{a_{n+1}}{a_n}$ konvergira in ima limito $d$.
+	\newline
+	Če je  $d < 1$, potem $\sum_{n = 1}^{\infty}{a_n}$ konvergira
+	\newline
+	Če je $d > 1$, potem $\sum_{n = 1}^{\infty}{a_n}$ divergira.
+	\newline
+	Če je $d = 1$, potem ne vemo nič.
+\end{Izrek}
+\begin{Izrek}
+	(Korenski kriterij) Naj bo $\sum_{n = 1}^{\infty}{a_n}$ vrsta s pozitivnimi členi. Denimo, da je zaporedje $c_n =\sqrt[n]{a_n}$ konvergentno z limito $c$.
+	\newline
+	Če je $ c > 1$, vrsta $\sum_{n = 1}^{\infty}{a_n}$ divergira.
+	\newline
+	Če je $ c < 1$, vrsta $\sum_{n = 1}^{\infty}{a_n}$ konvergira.
+	\newline
+	Če je $c = 1$, ne vemo nič.
+\end{Izrek}
+\begin{Definicija}
+	Pravimo, da je vrsta $\sum_{n = 1}^{\infty}{a_n}$ \textbf{alternirajoča}, če je $a_n \cdot a_{n+1} \le 0$ za vsak $n\in \mathbb{N}$.
+\end{Definicija}
+\begin{Opomba}
+	Če je $\{b_n\}_{n\in \mathbb{N}}$ zaporedje pozitivnih števil, potem je vrsta alternirajoča:
+	$$\sum_{n = 1}^{\infty}{(-1)^n b_n}$$
+\end{Opomba}
+\begin{Izrek}
+	(Leibnizev kriterij) Naj bo $\{a_n\}_{n\in \mathbb{N}}$, padajoče zaporedje, nenegativnih števil z limito $0$. Potem $\sum_{n = 1}^{\infty}{(-1)^n a_n}$ konvergira.
+\end{Izrek}
+\begin{Definicija}
+	Naj bo $\sum_{n = 1}^{\infty}{a_n}$ številska vrsta. Pravimo, da $\sum_{n = 1}^{\infty}{a_n}$ \textbf{absolutno konvergira}, če konvergira $\sum_{n = 1}^{\infty}{|a_n|}$. Če vrsta konvergira, in divergira absolutno, potem pravimo, da \textbf{konvergira pogojno}.
+\end{Definicija}
+\begin{Trditev}
+	Naj bo $\sum_{n = 1}^{\infty}{a_n}$ številska vrsta. Če je vrsta absolutno konvergentna, potem je konvergentna.
+\end{Trditev}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FUNKCIJE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Funkcije}
+\begin{Definicija}
+	Funkcija ali preslikava $f: A \to B$ je predpis, ki vsakemu elementu $a \in A$ priredi natanko en element $f(a) \in B$. Množica $A$ imenujemo \textbf{definicijsko območje} funkcije f ali \textbf{domena}, množico $B$ pa imenujemo \textbf{zaloga vrednosti} ali \textbf{kodomena}.
+\begin{Opomba}
+	Zaloga vrednosti funkcije $f$ je množica vseh elementov iz $B$, ki so slike kakšnega elementa iz množice $A$:
+	$$ Z_f = \{f(a); a\in A \} \subset B$$
+\end{Opomba}
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $f: D \to \mathbb{R}$ funkcija.\textbf{ Graf funkcije f}, je množica urejenih parov:
+	$$\Gamma_f = \{(x,f(x), x\in D)\}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo funkcija $f: D\to \mathbb{R}$ definirana na intervalu D. Pravimo, da je f \textbf{naraščajoča} na D, če velja: $ \forall x_1, x_2 \in D$ in $x_1 \le x_2$, potem \newline $f(x_1) \le f(x_2)$.
+	\newline
+	Funkcija je \textbf{strogo naraščajoča}, če za vsak $x_1, x_2 \in D$ velja $x_1 < x_2$, potem $f(x_1) < f(x_2)$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo funkcija $f: D\to \mathbb{R}$ definirana na intervalu D. Pravimo, da je f \textbf{padajoča} na D, če velja: za vsak $x_1, x_2 \in D$ in $x_1 \le x_2$, potem \newline $f(x_1) \ge f(x_2)$.
+	\newline
+	Funkcija je \textbf{strogo padajoča}, če za vsak $x_1, x_2 \in D$ velja $x_1 < x_2$, potem $f(x_1) > f(x_2)$.
+\end{Definicija}
+\begin{Opomba}
+	Funkcija je \textbf{monotona} na D, če je bodisi naraščajoča bodisi padajoča.
+\end{Opomba}
+\begin{Definicija}
+	Naj  bo D interval in $f: D \to \mathbb{R}$ funkcija. Zgornja meja funkcije f na D je $M\in \mathbb{R}$, z lastnostjo, da je $f(x) \le M$ za vsak $x \in D$.
+	\textbf{Funkcija je navzgor omejena} na D, kadar ima $f$ na D kakšno zgornjo mejo.
+	Če je f navzgor omejena na D, imenujemo število $\sup\{f(x),x\in D\}$ natančna zgornja meja funkcije f.
+	\newline
+	Podobno definiramo spodnjo mejo $f$ na $D$, navzdol omejeno in natančno spodnjo mejo.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $f: D\to \mathbb{R}$ definirana na simetričnem intervalu D.
+	\newline
+	Funkcija f je  \textbf{soda}, če velja $f(x) = f(-x)$ za vsak $x \in D$.
+	\newline
+	Funkcija f je \textbf{liha}, če velja $f(x) = -f(x)$ za vsak $x \in D$.
+\end{Definicija}
+\begin{Opomba}
+	Graf sode funkcije je simteričen glede na ordinatno os.
+	\newline
+	Graf lihe funkcije je simetričen glede na izhodišče koordinatnega sisitema.
+\end{Opomba}
+\begin{Definicija}
+	Naj bo $f: A \to B$ preslikava. Preslikava $f$ je \textbf{injektivna}, če poljubna različna elementa množice $A$ preslika v različne elementa množice $B$.
+	$$f(x) = f(y) \Rightarrow x = y$$
+	\\
+	Preslikava $f$ je \textbf{surjektivna}, če velja, da je zaloga vrednosti enaka celotni množici $B$. 
+	$$Z_f = B$$	
+	\\
+	Preslikava je \textbf{bijektivna}, natanko tedaj kadar je injektivna in surjektivna.
+\end{Definicija}
+\begin{Definicija}
+	Funkcijo $f: A \times A \to A$, imenujemo tudi dvočlena operacija na množici $A$.
+\end{Definicija}
+\begin{Definicija}
+		Naj bosta $f: A \to B$ in $g: B\to C$ preslikavi. Preslikava $g \circ f: A \to C$, ki je definirana s predpisom
+		$$ a \mapsto g(f(a))$$
+		imenujemo \textbf{kompozitum preslikav} $f$ in $g$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $f: A \to B$ preslikava. Če je $f$ bijektivna preslikava, potem $f^{-1}: B\to A$  \textbf{inverzna preslikava}, ki jo definiramo:
+	$$f^{-1}(b) = a \iff f(a) = b$$
+\end{Definicija}
+\begin{Posledica}
+		$$a\in A :  f^{-1}(f(a)) = f^{-1}(b) = a \Rightarrow f^{-1} \circ f \equiv id_A$$
+		$$b\in B :  f(f^{-1}(b)) = f(a) = b  \Rightarrow f \circ f^{-1} \equiv id_B$$
+\end{Posledica}
+\begin{Definicija}
+	Naj bosta $A$ in $B$ množici. Pravimo, da imata $A$ in $B$ \textbf{isto moč}, če obstaja bijektivna preslikava $f: A \to B$. ($A$ in $B$ sta ekvivalentni).
+\end{Definicija}
+\begin{Opomba}
+	Če je $f:A \to B$ bijektivna je tudi $f^{-1}: B\to A$ bijektivna.
+\end{Opomba}
+\begin{Opomba}
+	Končni množici imata isto moč natanko tedaj, kadar imata isto število elementov.
+\end{Opomba}
+\begin{Definicija}
+	Množica je \textbf{števno neskončna}, če imata $A$ in $\mathbb{N}$ isto moč. Neskončna množica, ki ni števno neskončna, je neštevna.
+\end{Definicija}
+\begin{Opomba}
+	Denimo, da je $A$ števno neskončna. \newline Potem obstaja bijekcija  $A \to \mathbb{N}$.
+	\\
+	$n \in \mathbb{N}: \quad  n\mapsto  f(n) = a_n$
+	\\
+	$A = \{a_1, a_2, a_3, \dots, a_n\}$
+\end{Opomba}
+\begin{zgled}
+	$ S := $ množica sodih naravnih števil.
+	\\
+	S je števno neskončna, saj obstaja bijektivna preslikava $f: \mathbb{N} \to S$, ki je definirana s predpisom: $n \mapsto 2n$.
+\end{zgled}
+%%%%%%%%%%%%%%%%%%%%LIMITE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Limite in zveznost}
+\begin{Definicija}
+	Pravimo, da je $L\in\mathbb{R}$ \textbf{limita funkcije} $f$ v točki $a$, če za vsako konvergentno zaporedje $\{a_n\}_{n\in \mathbb{N}}$ z limito $a_n$ velja, da je $\{f(a_n)\}_{n\in \mathbb{N}}$ konvergentno z limito $L$.
+\end{Definicija}
+\begin{Trditev}
+	Naj bosta g in f definirani v okolici točke a, razen morda v a. Če obstaja $ \lim\limits_{x\to a}{f(x)}$ in $ \lim\limits_{x\to a}{g(x)}$, potem velja:
+	\begin{enumerate}
+		\item
+		$\lim\limits_{x \to a}{ \lambda f(x)} = \lambda  \lim\limits_{x\to a}{f(x)}$
+		\item
+		$\lim\limits_{x \to a}{(f(x) \pm g(x))} =  \lim\limits_{x\to a}{f(x)} \pm \lim\limits_{x\to a}{g(x)}$
+		\item
+		$ \lim\limits_{x\to a}{(f(x)\cdot g(x) )} =  \lim\limits_{x\to a}{f(x)} \cdot  \lim\limits_{x\to a}{g(x)}$
+		\item
+		$\ \lim\limits_{x\to a}{\frac{f(x)}{g(x)}} = \frac{ \lim\limits_{x\to a}{f(x)}}{ \lim\limits_{x\to a}{g(x)}}, \quad  \lim\limits_{x\to a}{g(x)} \ne 0\quad  in \quad  g(x) \ne 0$
+		\item
+		$f(x) \le g(x) \iff  \lim\limits_{x\to a}{f(x)} \le  \lim\limits_{x\to a}{g(x)}$
+	\end{enumerate}
+\end{Trditev}
+\begin{Trditev}
+	Naj bo f definirana v okolici točke a razen morda v a. Potem velja:
+	$$L =  \lim\limits_{x\to a}{f(x)} \iff \forall \varepsilon > 0, \quad \exists \delta > 0,$$ da velja $ 0 < |x - a| < \delta$, potem velja: $|f(x) - L | < \varepsilon$.
+\end{Trditev}
+\begin{Definicija}
+	Naj bo funkcija f definirana na intervalu $(a, a + \varepsilon)$ za nek $\varepsilon > 0$. Število $L\in \mathbb{R}$, je \textbf{desna limita} funkcije f v točki a, če za vsak $\varepsilon > 0$, obstaja $\delta >0$, da za $x \in (a, a+\delta)$, potem velja: $|f(x) - L| < \varepsilon$.
+	$$L = \lim\limits_{x \searrow a}{f(x)}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo funkcija f definirana na intervalu $(a-\varepsilon, a)$ za nek $\varepsilon > 0$. Število $L\in\mathbb{R}$, je \textbf{leva limita} funkcije f v točki a, če za vsak $\varepsilon > 0,$ obstaja $ \delta > 0$, da za $x\in(a- \delta, a)$, velja $|f(x) - L | < \varepsilon$.
+	$$L = \lim\limits_{x \nearrow a}{f(x)}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $(a, \infty)$ interval in $f: (a, \infty) \to \mathbb{R}$ funkcija. Pravimo, da je $L\in \mathbb{R}$ \textbf{limita funckcije f v plus neskončnost}, če za vsak $\varepsilon > 0$, obstaja $M\in \mathbb{R}$, da za vsak $ x > M (M > a)$ velja $f(x) \in (L - \varepsilon, L + \varepsilon)$
+	$$ L = \lim\limits_{x\to \infty}{f(x)}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $(-\infty, b)$ interval in $f: (-\infty, b) \to \mathbb{R}$ funkcija. Pravimo, da je $L\in \mathbb{R}$ \textbf{limita funkcije v minus neskončnost}, če za vsak $\varepsilon > 0$, obstaja $m \in \mathbb{R}$, da za vsak $x < m (m < b)$ velja, $f(x) \in (L -\varepsilon, L +\varepsilon )$.
+	$$ L = \lim\limits_{x \to -\infty}{f(x)}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo funkcija definirana v okolici točke $a$, razen morda v $a$. Pravimo, da ima funkcija v točki $a$ limito neskončno, če za vsako še tako veliko število $M\in \mathbb{R}$, obstaja $\delta > 0$, da velja:
+	\\
+	če je $x \in (a - \delta, a+ \delta)\backslash \{a\}$, potem $f(x) > M$.
+\end{Definicija}
+%%%%%%%%%%%%%%ZVZENOST%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Definicija}
+	Naj bo funkcija definirana v okolici točke $a$. Pravimo, da je $f$ \textbf{zvezna v točki a}, če za vsak $\varepsilon > 0$, obstaja $\delta > 0$, da za x: $ |x - a| < \delta$, velja: $|f(x) - f(a) | < \varepsilon$.
+\end{Definicija}
+\begin{Trditev}
+	Naj bo funkcija $f$ definirana v okolici točke a. Potem je funkcija f zvezna v točki natanko tedaj, kadar obstaja $\lim\limits_{x \to a}{f(x)}$  in je enaka $f(a)$.
+\end{Trditev}
+\begin{dokaz}
+	$(\Rightarrow)$ če je $f$ zvezna v točki $a$, potem lahko za $L$ vzamemo $f(a)$.
+	\\
+	$(\Leftarrow)$ če limita obstaja in je enaka $f(a)$, potem je $f$ zvezna v $a$.
+\end{dokaz}
+\begin{Definicija}
+	Naj bo funkcija $f$ definirana na $(a,b)$. Potem je $f$ zvezna $(a,b)$, če je zvezna v vsaki točki $x_0 \in (a,b)$.
+	\\
+	Pravimo tudi, da je $f$ \textbf{zvezna funkcija}, če je zvezna na svojem definicijskem območju.
+\end{Definicija}
+\begin{Trditev}
+	Naj bosta $f$ in $g$ zvezni v točki a. Potem so tudi funkcije $f+g$, $f -g$ in $f\cdot g$ zvezne v točki $a$.
+	Če je $g(a) \ne 0$, potem je tudi $\frac{f}{g}$ zvezna v točki $a$.
+\end{Trditev}
+\begin{Trditev}
+	Naj bo funkcija f definirana v okolici točke $y_0$ in zvezna v točki $y_0$. Naj bo funkcija $y = y(x)$ definirana v okolici $x_0$ in zvezna v točki $x_0, \quad y(x) = y_0$. Potem je funkcija $f\circ g$ definirana v okolici točke $x_0$ in zvezna v točki $x_0$.
+	$$\lim\limits_{x \to x_0}{f(y(x))} = f(\lim\limits_{x \to x_0}{y(x)})$$
+\end{Trditev}
+\begin{Posledica}
+	Naj bo $\{x_n\}_{n\in \mathbb{N}}$ konvergentno zaporedje z limito $L$ in naj bo funkcija $f$ definirana v okolici točke $L$ in zvezna v $L$.
+	$$\lim\limits_{n\to \infty}{f(x_n)} = f (\lim\limits_{n\to \infty }{x_n}) = f(L)$$
+\end{Posledica}
+\begin{Izrek}
+	Vse elementarne funkcije so zvezne.
+\end{Izrek}
+\begin{Izrek}
+	(Bisekcija) Naj bo funkcija f definirana in zvezna na $[a,b]$. Če je $f(a) \cdot f(b) < 0$, potem ima f na $[a,b]$ ničlo. To pomeni, da obstaja $c\in (a,b)$, za katero velja $f(c) = 0$.
+\end{Izrek}
+\begin{Definicija}
+	Funkcija $f: D_f \to \mathbb{R}$ je \textbf{omejena}, kadar je $Z_f$ omejena. V tem primeru obstajata $m,M \in \mathbb{R}$, da velja $ m\le f(x)\le M$, za vsak $x\in D_f$.
+\end{Definicija}
+\begin{Izrek}
+	Naj bo f zvezna funkcija na $[a,b]$. Potem je funkcija f omejena.
+\end{Izrek}
+\begin{Izrek}
+	Naj bo $f$ zvezna funkcija na $[a,b]$. Potem funkcija $f$ doseže minimum ali maksimum, to pomeni, da obstaja $x_m, x_M \in [a,b]$, za katerega velja:
+	$$f(x_m) = \min\{f(x); x\in [a,b]\}$$
+	$$f(x_M) = \max\{f(x); x\in [a,b]\}$$
+\end{Izrek}
+\begin{Izrek}
+	Naj bo $f$ zvezna funkcija na $[a,b]$. Potem $f$ doseže vse vrednosti med $\min$ in $\max$.
+\end{Izrek}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%ODVOD%%%%%%%%%%%%%%%%%%%5
+\section{Odvod}
+\begin{Definicija}
+	Naj bo funkcija $f$ definirana v okolici točke a. Če obstaja
+	$$ \lim\limits_{h \to 0}{\frac{f(a+h) - f(a)}{h}}$$ potem jo imenujemo \textbf{odvod funkcjije f} v točki a in označimo $f'(a)$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo f definirana na $[a, a+\varepsilon]$ za $\varepsilon > 0$. \textbf{Desni odvod} funkcije f v točki $a$ je
+	$$ \lim\limits_{h \searrow 0}{\frac{f(a+h) - f(a)}{h}}$$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo f definirana na $[a, a+\varepsilon]$ za $\varepsilon > 0$. \textbf{Levi odvod} funkcije f v točki $a$ je
+	$$ \lim\limits_{h \nearrow 0}{\frac{f(a+h) - f(a)}{h}}$$
+\end{Definicija}
+\begin{Trditev}
+	Naj bo funkcija f definirana v okolici točke $a$. Potem je f odvedljiva v točki a natanko tedaj, kadar obstajata levi in desni odvod in sta enaka.
+\end{Trditev}
+\begin{Izrek}
+	Naj bo funkcija f definirana v okolici točke a. Če je f odvedljiva v točki a, potem je zvezna v točki a.
+\end{Izrek}
+\begin{Opomba}
+	Obratno ne velja. Primer: $f(x) = |x|$ v $f(0) = 0$
+\end{Opomba}
+\begin{Definicija}
+	Naj bo funkcija f definirana na $(a,b)$. Pravimo, da je f odvedljiva na $(a,b)$, če je f odvedljiva v vsaki točki na intervalu $(a,b)$. Če je f odvedljiva na $(a,b)$, potem je $f'$ funkcija, ki je definirana na $(a,b)$. Če je $f'$ zvezna na $(a,b)$, rečemo, da je $f$ \textbf{zvezno odvedljiva} na $(a,b)$.
+\end{Definicija}
+
+\begin{Definicija}
+	Naj bo funkcija f odvedljiva na $(a,b)$. Njen odvod je funkcija, ki je definirana na $(a,b)$. Če je ta nova funkcija $(f')$ odvedljiva na $(a,b)$, jo lahko še enkrat odvajamo in dobimo \textbf{drugi odvod funkcije} $f$, kar označimo s $f''$.
+\end{Definicija}
+\begin{Definicija}
+	Funkcija f, ki je definirana v okolici točke $a$, je \textbf{diferenciabilna} v točki a, če obstaja taka linearna funkcija ${L} : h \to {L}(h)$ za katero velja:
+	$$ \triangle f = f(a+h) - f(a) = L(h) + o_a(h)$$
+	kjer, velja da je $\lim\limits_{h\to 0}{\frac{o_a(h)}{h}} = 0$.
+\end{Definicija}
+\begin{Opomba}
+	Vsaka linearna funkcija $L: \mathbb{R} \to \mathbb{R}$ je oblike $ h\mapsto kh$, za nek $k\in \mathbb{R}$. Izplejali smo, da če je f odvedljiva v točki $a$, potem je ff diferenciabilna v točki a in $L(h) = f'(a) \cdot h$ in $o_a(h) = o(h)$.
+\end{Opomba}
+\begin{Definicija}
+	Funkcija L iz prejšne definicije imenujemo \textbf{diferencial funkcije f} v točki a. Če je f odvedljiva v točki a, potem velja:
+	$$ L(h) = f'(a) \cdot h$$
+	\\
+	Oznaka : $df_a(h) = f'(a) \cdot h $
+\end{Definicija}
+\begin{Izrek}
+	Naj bo funkcija f definirana v okolici  točke a. Potem je f odvedljiva v točki a natanko tedaj, kadar je f diferenciabilna v točki a.
+	V tem primeru velja: $ d f_a(h) = f'(a) \cdot h$
+\end{Izrek}
+\begin{Trditev}
+	\begin{itemize}
+		\item
+			Odvod konstante je $0$.
+		\item
+			Odvod indetitete je $1$.
+			\\
+			$f(x) = x \quad \forall x\in \mathbb{R}$
+			\\
+			$x\in \mathbb{R}: \quad f'(x) = \lim\limits_{h \to 0}{\frac{f(h+x) - f(x)}{h}} = \lim\limits_{h\to 0}{\frac{h + x -x}{h}} = \lim\limits{h \to 0}{1} = 1$
+		\item
+			Odvod vsote funkcije je vsota odvod. Isto za razliko.
+			$$(f+g)' = f' + g'$$
+			\\
+			\\
+			$(f+g)'(a) = \lim\limits_{h \to 0}{\frac{f+g(h+a) - f+g(a)}{h}} = \lim\limits_{h \to 0}{\frac{f(h+a)+g(h+a) - f(a) + g(a)}{h}}  = \lim\limits_{h\to 0}{\frac{f(a+h)- f(a)}{h}} + \lim\limits_{h \to 0}{\frac{g(h+a) - g(a)}{h}} = f' + g'$
+		\item
+			Odvod produkta funkcij:
+			$$(f\cdot g)' = f' \cdot g + f\cdot g' $$
+		\item
+			Odvod kvocienta odvedljivih funkcij:
+			$$( \frac{f}{g})' = \frac{f' \cdot g - g' \cdot f}{g^2}$$
+		\item
+			Odvod sestavljene funkcije:
+			$$(f\circ g)' = (f' \circ g)\cdot g'$$
+		\item
+			Odvod inverzne funkcije:
+			$$(f^{-1})' = \frac{1}{f' \circ f^{-1}}$$
+	\end{itemize}
+\end{Trditev}
+\begin{Definicija}
+	Naj bo funkcija f definirana v okolici točke $a$. Če velja $f(a) \ge f(x) \quad \forall x$ v neki okolici točke a, potem ima f v točki a \textbf{lokalni maksimum}.
+	\\
+	Če velja $f(a) \le f(x) \quad \forall x$ v neki okolici točke a, potem ima f v točki a \textbf{lokalni minimum}.
+\end{Definicija}
+\begin{Izrek}
+	Naj bo funkcija f definirana v okolici točke a in naj bo f odvedljiva v a. Če ima f v točki a lokalni ekstrem potem je $f'(a) = 0$.
+\end{Izrek}
+\begin{Izrek}
+	(\textbf{Rollov}) Naj bo f zvezna funkcija na $[a,b]$ in odvedljiva na $(a,b)$. Če je $f(a) = f(b)$, potem obstaja $c\in (a,b)$, da velja $f'(c) = 0$.
+\end{Izrek}
+\begin{dokaz}
+	Ker je f zvezna na zaprtem intervalu $[a,b]$ doseže globalni maksimum in globalni minimum. 
+	\newline
+	Prva možnost : m = M $\to$ f je konstanta $f'(x) = 0$ OK. (m in M sta globalna ekstrema)
+	\newline
+	Druga možnost: $ m < M$:
+		Ker velja, $f(a) = f(b)$, leži vsaj eno od števil $x_m$ in $x_M$ v notranjosti intervala $[a,b]$. Recimo, da je to $x_M$. Potem je $x_M$ lokalni minimum od f. Po izreku velja: $f'(x_M) = 0$.
+		(ni čist kul(glej recimo.))
+\end{dokaz}
+\begin{Izrek}
+	(\textbf{Lagrangeev izrek}) Naj bo f zvezna funkcija na $[a,b]$ in odvedljiva na $(a,b)$. Potem obstaja $c\in (a,b)$, za katerega velja:
+	$$f'(c) = \frac{f(b)- f(a)}{b -a}$$
+\end{Izrek}
+
+\begin{dokaz}
+	Definirajmo funkcijo $g: [a,b]\to \mathbb{R}$ s predpisom:\newline $g(x) =f(x) - \frac{f(b) -f(a)}{b - a}(x-a)$. $g$ je zvezna na $[a,b]$ in odvedljiva na $(a,b)$.
+	\newline
+	$g(a) = f(a)$
+	\newline
+	$g(b) =f(a) - (f(b) - f(a)) = f(a)$
+	\newline
+	Po Rollovem izreku velja, da obstaja $c\in [a,b]$, da velja: $f'(c) = 0$
+	$$g'(c) = f'(c) - \frac{f(b) - f(a)}{b - a} = 0$$
+	$$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+\end{dokaz}
+\begin{Posledica}
+	Naj bo f zvezna na $[a,b]$ in odvedljiva na $(a,b)$. Denimo, da je $f'(c) = 0$ za vsak $c\in [a,b]$. Potem je $f$ konstanta.
+\end{Posledica}
+\begin{dokaz}
+	Izberimo poljuben $x \in [a,b]$. Uporabimo Lagrangev izrek na intervalu $[a,x]$. Obstaja $c \in [a,x]$:
+	\newline
+	$ 0 = f'(c) = \frac{f(x) - f(a)}{x - a}$
+	\newline
+	Iz tega sledi, da je $f(a) = f(x)$.
+	Torej sledi, da je $f(a) = f(x) \quad \forall x\in [a,b]$. Torej je f konstanta.
+\end{dokaz}
+\begin{Izrek}
+	Naj bosta f in g zvezni na $[a,b]$ in odvedljivi na $(a,b)$. Naj velja: $f'(x) = g'(x)$ za vsak $x$ na $[a,b]$. Potem obstaja $c \in \mathbb{R}$ in velja: $f(x) = g(x) + c$ za vsak $x \in [a,b]$.
+\end{Izrek}
+\pagebreak
+\begin{Trditev}
+	Naj bo f zvezna na $[a,b]$ in odvedljiva na $(a,b)$. Potem velja:
+	\begin{enumerate}
+		\item
+		f je \textbf{naraščajoča} na $[a,b) \iff f'(x) \ge 0$ za vse $x \in (a,b)$
+		\item
+		f je \textbf{padajoča}  na $[a,b] \iff f'(x) \le 0$ za vse $x\in (a,b)$.
+		\item
+		če je $f'(x) > 0$ za vse $x \in (a,b) \Rightarrow$ f je strogo naraščajoča na $[a,b]$
+		\item
+		če je $f'(x) < 0$ za vse $x \in (a,b) \Rightarrow$ f je strogo padajoča na $[a,b]$
+	\end{enumerate}
+\end{Trditev}
+\begin{Definicija}
+	Naj bo f odvedljiva funkcija na množici D. Rešitve enačb $f'(c) = 0$ imenujemo stacionarne točke.
+\end{Definicija}
+\begin{Izrek}
+	Naj bo f zvezna na $[a,b]$ in odvedljiva na $(a,b)$. Naj bo $x_0$ stacionarna točka odvedljive funkcije f.
+	\begin{enumerate}
+		\item
+		Če je v neki okolici točke $x_0$, levo od $x_0$ odvod nenegativen in desni od $x_0$ nepozitiven, potem ima f v točki $x_0$ lokalni maksimum.
+		\item
+		Če v neki okolici točke $x_0$ odvod ne spremeni predznaka, potem f v točki $x_0$ nima lokalnih ekstremov.
+	\end{enumerate}
+\end{Izrek}
+\begin{Opomba}
+	Zvezno odvedljivi funkciji se predznak odvoda spremeni samo v stacionarni točki.
+\end{Opomba}
+\begin{Izrek}
+	Naj bo f dvakrat zvezno odvedljiva funkcija in $x_0$ njena stacionarna točka.
+	\newline
+	$f''(x_0) > 0 \Rightarrow$ f v točki  $x_0$  lokani minimum.
+	\newline
+	$f''(x_0) < 0 \Rightarrow $ f v točki $x_0$ lokalni maksimum.
+\end{Izrek}
+\begin{Izrek}
+	Naj bo f zvezna funkcija na $[a,b]$ in odvedljiva na $(a,b)$. Potem funkcija f doseže globalni ekstrem v stacionarni točki ali v krajišču intervala $[a,b]$.
+\end{Izrek}
+\begin{Definicija}
+	Naj bo f odvedljiva funkcija v okolici točke a. Če v vsaki točki iz te okolice velja, da je graf nad tangento na graf v točki $a$, potem je f \textbf{konveksna} v točki a.
+	\newline
+	Če v vsaki točki iz te okolice velja, da je graf pod tangetno na graf v točki a, potem je f \textbf{konkavna} v točki a.
+\end{Definicija}
+\begin{Izrek}
+	Naj bo funkcija f na $(a,b)$ dvakrat odvedljiva.
+	\begin{itemize}
+		\item
+		Če je $f''(x) > 0$ za vsak $x \in (a,b)$, potem je f konveksna na $(a,b)$.
+		\item
+		Če je $f''(x) < 0$ za vsak $x\in (a,b)$, potem je f konkavna na $(a,b)$.
+	\end{itemize}
+\end{Izrek}
+\begin{dokaz}
+	Izberimo $x_0 \in (a,b)$, dokazujemo, da je graf f pod tangento v točki $x_0$. Enačba tangente: $y -f(x_0) = f'(x_0)(x-x_0)$.
+	\newline
+	Po Lagrangu: $f(x) - f(x_0) = f'(c) (x - x_0)$. Iz $f''(x) > 0$ sledi, da je $f'$ na $(a,b)$ strogo naraščajoča funkcija. Če je $x > x_0$, je $c > x_0$ in od tod sledi : $f'(c) > f'(x_0)$.
+	$$f(x) = f(x) + f'(c) (x -x_0) > f(x_0)+ f'(x_0)(x - x_0) = y$$
+	Zato je graf nad tangento.(glej zvezek)
+\end{dokaz}
+\begin{Definicija}
+	Naj bo f odvedljiva funkcija. Pravimo, da ima f v točki a \textbf{prevoj}, če velja bodisi, da je levo od a konveksna in desno od a konkavna, bodisi obratno.
+\end{Definicija}
+\begin{Opomba}
+	Če je f v točki a dvakrat zvezno odvedljiva in ima v točki a prevoj, potem velja: $f''(a)= 0$. Obratno ni nujno res: če je $f''(a) = 0$, potem a ni nujno prevoj.
+\end{Opomba}
+\begin{Izrek}
+	(L'Hospitalovo pravilo) Naj bosta u in v odeveljivi funkciji v okolici točke a. Denimo, da je $u(a) = v(a)$ in da v neki okolici točke a funkcija v in funkcija v' nimata ničel razen v a. Če obstajata:
+	$\lim\limits_{x \to a}{\frac{u'(x)}{v'(x)}}$, potem obstaja $\lim\limits_{x \to a}{\frac{u(x)}{v(x)}}$ in velja:
+	$$\lim\limits_{x \to a}{\frac{u'(x)}{v'(x)}} = \lim\limits_{x \to a}{\frac{u(x)}{v(x)}}$$
+\end{Izrek}
+\begin{Izrek}
+	Naj bosta u in v odvedljivi funkciji v okolici točke a, razen morda v a in denimo, da je $\lim\limits_{x \to a}{u(x)} = \pm \infty$ in da je $\lim\limits_{x \to a}{v(x)} = \pm \infty$. Če obstaja končna in neskončna  $\lim\limits_{x \to a}{\frac{u'(x)}{v'(x)}}$, potem obstaja  $\lim\limits_{x \to a}{\frac{u(x)}{v(x)}}$ in velja
+	$$ \lim\limits_{x \to a}{\frac{u(x)}{v(x)}} =  \lim\limits_{x \to a}{\frac{u'(x)}{v'(x)}}$$
+\end{Izrek}
+\section{Integral}
+\subsection{Nedoločen integral}
+\begin{Definicija}
+	Naj bo funkcija f definirana na intervalu I. Odvedljiva funkcija F, definirana na intervalu I za katero velja: $F'(x) =f(x)$ za vse $x \in I$ imenujemo \textbf{primitivna funkcija} funkcije f.
+\end{Definicija}
+\begin{Opomba}
+	Če je F primitivna funkcija od f na I, potem je tudi funkcija \newline
+	$x \mapsto F(x) + C \quad C\in \mathbb{R}$, primitivna funkcija od f na I.
+\end{Opomba}
+\begin{Definicija}
+	Naj bo funkcija f definirana na intervalu I. Družino vseh primitivnih funkcij funkcije f na I imenujemo \textbf{nedoločen integral} funkcije f in označimo
+	$$\int{f(x)} dx$$
+\end{Definicija}
+\begin{Trditev}
+	Denimo, da imata f in g primitivni funkciji. Potem imata tudi funkciji $f+g$ in $k\cdot f \quad k\in \mathbb{R}$ primitivna funkcija in velja:
+	$$\int{(f(x) + g(x))}dx = \int{f(x) dx} + \int{g(x) dx}$$
+	$$\int{k \cdot f(x) dx} = k \cdot \int{f(x) dx}$$
+\end{Trditev}
+\begin{dokaz}
+	Denimo, da sta F in G primitivni funkciji od f in g.
+	\newline
+	Velja: $F' = f$ in $G' = g$
+	\newline
+	$(F+G)' = F' + G' = f + g$
+	\newline
+	\newline
+	$k\in \mathbb{R} \quad (k\cdot F)' = k \cdot f$;
+	\newline
+	$\int{k \cdot f(x)}dx = k \cdot F(x) + C = k \int{f(x) dx}$
+\end{dokaz}
+\begin{Trditev}
+	(Uvedba nove spremenljivke)
+	Če ima funkcija f primitivno funkcijo in je $x = x(t)$ odvedljiva funkcija, potem je tudi funkcija $f(x(t)) \cdot \dot{x}(t)$ primitivna funkcija in velja:
+	$$\int{f(x) dx} = \int{ f(x(t)) \cdot \dot{x}(t)}dt$$
+\end{Trditev}
+\begin{Trditev}
+	(Integracija po delih - Per Partes) Naj bosta f in g odvedljivi funkciji. Če obstaja eden od integralov $\int{f(x) g'(x)}dx$ ali $\int{f'(x) g(x)}dx$, potem obstaja tudi drugi in velja:
+	$$\int{f(x) g'(x)}dx + \int{f'(x) g(x)} =f(x) \cdot g(x)$$
+	\\
+	\\
+	$$\int{u dv} = u \cdot v - \int{v du}$$
+\end{Trditev}
+\subsection{Določeni integral}
+\begin{Definicija}
+	Naj bo $[a,b]$ zaprti interval. Končno mnogo točk $x_0, x_1,\cdots , x_n$ imenujemo \textbf{delitev} intervala $[a,b]$, če velja:
+	$$x_0 = a < x_1 < x_2 < \cdots < x_{n-1} < x_n = b$$
+	Označimo: $D = \{x_0, x_1, \cdots x_n\}$
+\end{Definicija}
+\begin{Definicija}
+	Naj bo f omejena funkcija na intervalu $[a,b]$. Velja:
+	$$m_j = \inf \{f(x); x\in [x_{j-1},x_j]\}$$
+	$$M_j = \sup \{f(x); x\in [x_{j-1},x_j]\}$$
+\end{Definicija}
+\begin{Definicija}
+	$$S(D) =  \sum_{j= 0}^{n}{M_j(x_j - x_{j-1})}$$
+	imenujemo \textbf{zgornja Darbouxova vsota}.
+	
+	$$s(D) = \sum_{j =1}^{n}{m_j(x_j -x_{j-1})}$$
+	imenujemo \textbf{spodnja Darbouxova vsota}.
+	\newline
+	Velja: $s(D) \le S(D)$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $$s = \sup \{s(D); D \quad \textnormal{delitev} \quad [a,b]\}$$ in \newline $$S = \inf  \{S(D); D \quad \textnormal{delitev} \quad [a,b]\}.$$ Če je $ s = S$, potem pravimo, da je f \textbf{integrabilna} na $[a,b]$ in $S$ imenujemo \textbf{določeni integral} funkcije f na $[a,b]$.
+	\newline
+	Če $ S\ne s$, potem f ni integrabilna na $[a,b]$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $f:[a,b] \to \mathbb{R}$ funkcija in naj bo $D$ delitev $[a,b]$. Naj bo $T$ množica točk, ki je usklajena z delitvijo $D = \{x_0, x_1, \cdots x_n\}$ in $x_0 = a < x_1 < x_2 < \cdots < x_{n-1} < x_n = b$, potem je $$T_D = \{t_1, t_2, t_3,\cdots t_n\}$$ in $t_j \in [t_j,t_{j-1}]$. Množici $T_D$ pravimo \textbf{usklajena izbira testnih točk}.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo  $f:[a,b] \to \mathbb{R}$ funkcija, $D$ delitev $[a,b]$ in naj bo $T_D$ usklajena izbira testnih točk. Potem:
+	$$R(f,D,T_D) = \sum_{j = 1}^{n}{f(t_j)(x_j - x_{j-1})}$$
+	imenujemo \textbf{Riemmanova vsota}.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo  $f:[a,b] \to \mathbb{R}$ funkcija, $D$ delitev $[a,b]$ in naj bo $T_D$ usklajena izbira testnih točk. Potem:
+	$$\int_{b}^{a}{f(x) dx} = \lim\limits_{\delta(D) \to 0}{(R(f,D,T))}$$ imenujemo \textbf{Riemmanov integral}, pri čemer je $\delta(D) = \max\{x_j - x_{j-1} , j = 1, \dots ,n\}$ velikost delitve D.
+\end{Definicija}
+\begin{Definicija}
+	$\forall \varepsilon > 0, \exists \delta >0$, da velja: za vsako delitev D, za katero je $\delta(D) < \delta$ in za vsako usklajeno izbiro testnih točk $T_D$:
+	$$|R(f,D,T_D) - I| < \varepsilon$$
+\end{Definicija}
+\begin{Opomba}
+	Izkaže se, da omejena funkcija f je integrabilna $\iff$ integrabilna v Riemmanovem smislu.
+\end{Opomba}
+\begin{Opomba}
+	Če funkcija $f:[a,b] \to \mathbb{R}$ ni omejena, potem ni Riemmanovo integrabilna.
+\end{Opomba}
+\begin{Trditev}
+	Naj bo $f:[a,b] \to \mathbb{R}$ monotona funkcija. Potem je f integrabilna.
+\end{Trditev}
+\begin{Izrek}:
+	\begin{itemize}
+		\item
+		Če je $f \ge 0$, potem je integral $\int_{a}^{b}{f(x) dx}$, ploščina lika pod grafom.
+		\item
+		$\int_{a}^{b}{f(x)dx} = \int_{a}^{b}{f(t) dt}$	
+		\item
+		$\int_{a}^{a}{f(x) dx} = 0$
+		\item
+		$\int_{a}^{b}{f(x) dx} = \int_{a}^{c}{f(x) dx} + \int_{c}^{b}{f(x) dx}$	
+	\end{itemize}
+\end{Izrek}
+\begin{Opomba}
+	Dogovor: funkcija $f:[a,b] \to \mathbb{R}$ integrabilna: $$\int_{a}^{b}{f(x) dx} = - \int_{b}^{a}{f(x) dx}$$
+\end{Opomba}
+\begin{Trditev}
+	Naj bosta f in g integrabilni funkciji na $[a,b]$:
+	\begin{itemize}
+		\item
+		$$\int_{a}^{b}{c\cdot f(x) dx} = c\cdot  \int_{a}^{b}{f(x) dx} \quad c\in \mathbb{R}$$
+		\item
+		$$\int_{a}^{b}{(f(x)+g(x)) dx} =\int_{a}^{b}{ f(x) dx} + \int_{a}^{b}{g(x) dx}$$
+		\item
+		$$\int_{a}^{b}{(f(x)- g(x)) dx} =\int_{a}^{b}{ f(x) dx} - \int_{a}^{b}{g(x) dx}$$
+		\item
+		Če velja $m\le f(x) \le M$ za vse $x\in [a,b]$, potem velja:
+		$$(b-a) m \le \int_{a}^{b}{ f(x) dx} \le M(b-a)$$
+		\item
+		$$\arrowvert \int_{a}^{b}{f(x) dx}\arrowvert \le  \int_{a}^{b}{f(x) dx}$$
+	\end{itemize}
+\end{Trditev}
+\begin{Izrek}
+	(Izrek o povprečni vrednosti) 
+	Naj bo f integrabilna funkcija na $[a,b]$.
+	Naj bosta $m = \inf\{f(x); x\in[a,b]\}$ in 
+	$M = \sup\{f(x); x\in[a,b]\}$.
+	\\
+	Potem obstaja število $p\in [m,M]$, da velja:
+	$$p = \frac{1}{b - a}\int_{a}^{b}{f(x)dx}$$
+	\\
+	Če je f zvezna na $[a,b]$, potem obstaja $c\in [a,b]$, da velja: $f'(c) = p$.
+	Število p imenujemo povprečna vrednost funkcije f na $[a,b]$.
+\end{Izrek}
+\begin{dokaz}
+	 $m\le f(x) \le M$ za vse $x\in [a,b]$.
+	 \newline
+	 Vemo : $$(b-a) m \le \int_{a}^{b}{ f(x) dx} \le M(b-a)$$ delimo s $(b-a)$ in dobimo:
+	 \newline
+	 $$m \le p\le M$$
+	 \newline
+	 Zvezne funkcije dosežejo vse vrednosti med min in max, zato obstaja $c\in[a,b]: f'(c) = p$.
+\end{dokaz}
+\begin{Izrek}
+	Naj bo $f:  [a,b]\to \mathbb{R}$ zvezna funkcija. Potem je f integrabilna na $[a,b]$.
+\end{Izrek}
+\begin{dokaz}
+	(Ideja dokaza)
+	$s(D) \ge s = S \ge S(D)$
+	\newline
+	Poiščemo delitev D:
+	$S(D) - s(D) < \varepsilon$
+	\newline
+	$\sum_{j = 1}^{n}{(M_j - m_j)(x_j - x_{j-1})}$
+	\newline
+	$(M_j - m_j)$ zaradi zveznosti lahko naredimo poljubno majhen.
+\end{dokaz}
+\begin{Posledica}
+	Elementarne funkcije, ki so definirane na zaprtem intervalu $[a,b]$ so integrabilne na $[a,b]$.
+\end{Posledica}
+\begin{Definicija}
+	Naj bo $f:[a,b]\to \mathbb{R}$ integrabilna funkcija. Definirajmo predpis: $F:[a,b]\to \mathbb{R}$:
+	$$F(x) = \int_{a}^{x}{f(t)dt} \quad x\in[a,b]$$
+	Funkcijo F imenujemo integral kot funkcijo zgornje meje.
+\end{Definicija}
+\begin{Izrek}
+	Naj bosta f in F definirana kot zgornja definicija. Potem velja:
+	\begin{itemize}
+		\item 
+		F je zvezna funkcija
+		\item 
+		Če je f zvezna funkcija, potem je F odvedljiva in velja:
+		$$F'(x) =f(x) \quad \forall x\in(a,b)$$ Torej je F primitivna funkcija od f.
+	\end{itemize}
+\end{Izrek}
+\begin{Izrek}
+	Če je f zvezna funkcija na $[a,b]$ in F njena primitivna funkcija, potem $\int_{a}^{b}{f(x)dx} = F(b) - F(a)$
+\end{Izrek}
+\begin{dokaz}
+	Naj bo F primitivna funkcija f. Vemo, da je $x\mapsto \int_{0}^{x}{f(t) dt}$ tudi primitivna funkcija od f. Ker se primitivni funkciji na intervalu $[a,b]$ lahko razlikujeta kvečjemu za konstanto je :
+	\newline
+	$F(x) = \int_{a}^{x}{f(t)dt} + C \quad c\in\mathbb{R}$
+	\newline
+	$F(a) = C$
+	\newline
+	$F(b) = \int_{a}^{b}{f(t) dt} + C$
+	
+\end{dokaz}
+\begin{Izrek}
+	Naj bo funkcija f zvezna na $[a,b]$ in naj bo $g: [\alpha, \beta]\to [a,b]$ zvezno odvedljiva funkcija. Potem velja:
+	$$\int_{g(\alpha)}^{g(\beta)}{f(x) dx} = \int_{\alpha}^{\beta}{f(g(t)) \cdot g'(t) dt}$$
+\end{Izrek}
+\begin{dokaz}
+	Ker je funkcija f zvezna, potem obstaja funkcija F za katero velja:
+	\\
+	$F'(x) =f(x) \quad \forall x\in(a,b)$
+	\\
+	$\int_{g(\alpha)}^{g(\beta)}{f(x) dx} = F(x) |^{g(\beta)}_{g(\alpha)} = F(g(\beta)) - F(g(\alpha))$
+	\newline
+	Odvajamo $F\circ g$: $(F\circ g)' = F'g \cdot g' = f(g) - g'$
+	\newline
+	$F\circ g$ je primitivna funkcija od $(f\circ g)\cdot g' $, zato po Newton - Leibnizovi formuli:
+	$$\int_{\alpha}^{\beta}{f(g(t)) g'(t) dt} = F\circ g \|^\beta _\alpha = F(g(\beta)) - F(g(\alpha))$$
+\end{dokaz}
+\begin{Izrek}
+	Naj bosta u in v odvedljivi funkciji na $[a,b]$. Potem velja:
+	$$\int_{a}^{b}{u(x)\cdot v'(x) dx} = (u(x) -v(x))| - \int_{a}^{b}{u'(x) \cdot v(x) dx}$$
+\end{Izrek}
+\begin{dokaz}
+	$(u\cdot v)' = u' \cdot v + u \cdot v'$
+	\newline
+	$u\cdot v$ je primitivna funkcija od $u'v + v'u$
+	\newline
+	Zato po Newton - Leibniz formuli velja:
+	$$\int_{a}^{b}{(u'(x)v(x) + u(x)v'(x) ) dx }= (u(x) v(x))|$$
+\end{dokaz}
+\subsection{Posplošeni integral}
+\begin{Definicija}
+	Naj bo funkcija $f:[a,b) \to \mathbb{R}$ zvezna funkcija. Potem je \textbf{posplošen integral} funkcije f v mejah od a do b.
+	$$\int_{a}^{b}{f(x)\ dx} = \lim\limits_{c\to b}\int_{a}^{c}{f(x)\ dx}$$
+	če ta limita obstaja.
+	\\
+	V tem primeru pravimo, da je f posplošeno integrabilna na intervalu $[a,b)$, ali da integral konvergira. Sicer pravimo, da integral divergira.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $f:(a,b] \to \mathbb{R}$ zvezna funkcija. Potem je $f$ posplošeno itegrabilna na intervalu $(a,b]$, če obstaja:
+	$$\lim\limits_{c\searrow a}{\int_{c}^{b}{f(x) \ dx}}$$
+	V tem primeru jo označimo $\int_{a}^{b}{f(x)\ dx}$.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $a < c < b$ in naj bo $f:[a,c) \cup (c,d] \to \mathbb{R}$ zvezna funkcija. Pravimo, da je f posplošeno integrabilna na intervalu $[a,b]$, če je f posplošeno integrabilna na intervalu $a,c$ in $c,b$ in definiramo:
+	$$\int_{a}^{b}{f(x) \ dx} = \int_{a}^{c}{f(x) \ dx} + \int_{c}^{b}{f(x) \ dx} = \lim\limits_{t \nearrow c}{\int_{a}^{t}{f(x) \ dx}} + \lim\limits_{b\searrow c}{\int_{b}^{nevem}{f(x) \ dx}}$$
+\end{Definicija}
+\begin{Opomba}
+	\begin{itemize}
+		\item
+		Podobno nadaljujemo v bolj kompliciranih primerih: da bi integral obstajal, morajo obstajati vsi integrali na manjših intervalih.
+		\item
+		Ta definicija posplošene integrabilnosti ni isto kot:
+		$$\int_{-1}^{1}{\frac{1}{x} \ dx} = \lim\limits_{t\searrow 0}{\left( \int_{-1}^{-t}{\frac{1}{x} \ dx} + \int_{t}^{1}{\frac{1}{x}\ dx}\right)} = \lim\limits_{t 
+		\searrow 0}{(0)} = 0$$
+		$$\lim\limits_{t \searrow 0}{\int_{t}^{1}{\frac{1}{x} \ dx}} = \lim\limits_{t\searrow 0}{(\ln{x}|^1_0)} = \lim\limits_{t \searrow 0}{(-\ln{t})}= + \infty$$
+		Posplošeni integral divergira, glavna vrednost pa ostaja.
+	\end{itemize}
+\end{Opomba}
+\begin{Izrek}
+	Naj bo g zvezna funkcija na $[a,b]$. Potem:
+	$$\int_{a}^{b}{\frac{g(x)}{(x-a)^s}\ dx} $$
+	konvergira, če $s < 1$, in divergira, če je $s \le 1$ in je $g(a) \ne 0$.
+\end{Izrek}
+\begin{Definicija}
+	Naj bo f definirana $f:[a,\infty) \to \mathbb{R}$, ter zvezna funkcija. Če obstaja 
+	$$\lim\limits_{M\to \infty}\int_{a}^{M}{f(x)dx},$$ potem pravimo, da je f posplošeno integrabilna na $[a,\infty)$ in limito označimo z $$\int_{a}^{\infty}{f(x) dx}$$.
+\end{Definicija}
+\begin{Opomba}
+	Definiciji posplošene integrabilnosti na končnem in neskončnem intervalu združimo v strogem smislu:
+	Če je $f: [a,\infty)\backslash \{c_1, c_2,\dots c_n\} \to \mathbb{R}$ zvezna funkcija potem je f posplošen integrabilna, če obstajata posplošena integrala $\int_{a}^{M}{f(x)dx}$ in $\int_{M}^{\infty}$, kjer je $M> \max\{c_1,c_2, \dots c_n\}$.
+\end{Opomba}
+\begin{Izrek}
+	Naj bo $g: [a,\infty) \to \mathbb{R}$ zvezna in omejena funkcija, $a>0$. Potem integral $$\int_{a}^{\infty}{\frac{g(x)}{x^{s}}dx}$$ obstaja, če je $s > 1$ in  ne obstaja, če je $s \le 1$ in je g v neskončnosti omejena stran od 0. (tj.$\exists n>0$, da je $g(x) >n$, za vse dovolj velike $x$ ali pa $g(x) \le -m$ za vse dovolj velike x).
+\end{Izrek}
+\begin{Opomba}
+	Pogoj v neskončnost je gotovo izpolnjen v primeru, če obstaja: $\lim\limits_{x\to \infty}{g(x)}\ne 0$.
+\end{Opomba}
+\begin{Trditev}
+	Denimo, da sta f in g definirani na intervalu: $[a,\infty) \to \mathbb{R}$ zvezni funkciji in denimo, da velja $0\le f(x) \le g(x)$ za vse $x\in [a,\infty)$:
+	\begin{enumerate}
+		\item
+		Če obstaja $\int_{a}^{\infty}{g(x) dx}$, potem obstaja $\int_{a}^{\infty}{f(x) dx}$.
+		\item
+		Če divergira $\int_{a}^{\infty}{f(x) dx}$, potem divergira tudi $\int_{a}^{\infty}{g(x) dx}$
+	\end{enumerate}
+\end{Trditev}
+\begin{Izrek}
+	(Integralski kriterij za konvergenco vrst)
+	Naj bo $\sum_{n=1}^{\infty}{a_n}$ vrsta s pozitivnimi členi, za katero obstaja funkcija $f: [a,\infty) \to \mathbb{R}$, ki je pozitivno zvezna, padajoča in $f(n) = a_n$. Tedaj vrsta $\sum_{n=1}^{\infty}{a_n}$ konvergira natanko tedaj, kadar obstaja:
+	$$\int_{1}^{\infty}{f(x) dx}$$
+\end{Izrek}
+\subsection{Numerično integriranje}
+Včasih določenega integrala ne moremo izračnati natančno, radi pa bi ocenili njegovo približno vrednost.
+$$\int_{a}^{b}{f(x) \ dx} = \int_{a}^{b}{g(x) \ dx} + R$$
+Funkcijo $f$ nadomestimo s prbiližkom $g$, pri integriranju naredimo napako $R$.
+\subsubsection{Trapezna metoda}
+Interval $[a,b]$ razdelimo na $n$ enakih delov: $x_k = a + k \frac{b-a}{n}$ in naj bo
+$g$ odsekovo linearna funkcija skozi točke $(x_k, f(x_k))$. 
+$$\int_{x_{k-1}}^{x_k}{g(x) \ dx} = \frac{f(x_{k-1}) + f(x_k)}{2} \cdot \frac{b-a}{n}$$
+$$\int_{a}^{b}{g(x) \ dx} = \frac{b-a}{2n} (f(x_0) + f(x_1) +f(x_1)+ f(x_2) + \dots + f(x_{n-2}) + f(x_{n-1})+f(x_{n-1}) + f(x_n)) $$
+$$= \frac{b-a}{2n}(f(x_0) + 2f(x_1)+ 2f(x_2)+ \dots + 2f(x_{n-2}) + 2f(x_{n-1}) + f(x_n))$$
+Formula za napako:
+$$|R_n| \ge \frac{(b-a)^3}{12 n^2} \max_{x\in [0,1]}|f''(x)|$$
+\section{Taylorjeva vrsta}
+\begin{Definicija}
+	Naj bo f vsaj $n-$ krat zvezno odvedljiva v okolici točke $a$:
+	$$T_n(x) = f(a) + f'(a) (x-a) + \frac{f''(a)}{2}(x-a)^n + \frac{f^{(3)}(a)}{3!}(x-a)^3 + \dots + \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+	$T_n(x)$ imenujemo n-ti \textbf{Taylorjev polinom} funkcije f v točki a.
+\end{Definicija}
+\begin{Trditev}
+	V okolici točke a lahko zapišemo: 
+	$f(x) = T_n(x) + R_n(x)$. S polinomom $T_n(x)$ aproksimiramo funkcijo f(x) v okolici točke a. Velikost $R_n(x)$ pove kako dobra je aproksimacija.
+	$$R_n(x) = \frac{f^{(n+1)(c)}}{(n+1)!} (x-a)^{n+1} \quad c\in[a,x]$$
+\end{Trditev}
+\begin{Definicija}
+	Denimo, da je f neskončnokrat odvedljiva v okolici točke a. Potem lahko funkciji f priredimo vrsto:
+	$$T(x) = \sum_{n = 0}^{\infty}{\frac{f^{(n)}(a)}{n!}(x-a)^n}$$
+	$T(x)$ imenujemo \textbf{Taylorjeva vrsta} prirejena funkciji f v točki a.
+	\\
+	$T_n(x)$ je n-ta delna vsota vrste $T(x)$.
+\end{Definicija}
+\begin{Opomba}
+	Vrsta $T(x)$ konvergira natanko tedaj, kadar konvergira njeno zaporedje delnih vsot, tj. $T_n(x)$, tj. natanko tedaj ko zaporedje $R_n(x)$ konvergira proti 0.
+\end{Opomba}
+\begin{Opomba}
+	Če vemo samo to, da je $T(x)$ konvergentna ne vemo pa, da gre $R_n(x)$ proti 0, potem $f(x) = T(x) $ ni nujno res.
+\end{Opomba}
+\begin{Zgled}
+	Eksponentna funkcija v točki 0:
+	$$e^x= 1 + x +\frac{x^2}{2} + \frac{x^3}{3!} + \cdot + \frac{x^n}{n!} = \sum_{n= 0}^{\infty}{\frac{x^n}{n}} \quad \forall x\in \mathbb{R}$$
+	\\
+	Posledica: $$\sum_{n= 0}^{\infty}{\frac{1}{n!}} = e$$
+\end{Zgled}
+\begin{Zgled}
+	Funkcija sinus in kosinus v točki 0:
+	$$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots = \sum_{n= 0}^{ \infty}{\frac{(-1)^n \ x^{2n+1}}{(2n+1)!}} \quad \forall x\in \mathbb{R}$$
+	
+	$$\cos(x) = 1- \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots = \sum_{n =0}^{\infty}{\frac{(-1)^n \ x^{2n}}{2n!}} \quad \forall x\in \mathbb{R}$$
+	
+\end{Zgled}
+\begin{Zgled}
+	Binomska vrsta:
+	$$(1+x)^\alpha = \sum_{n = 0}^{\infty}{\binom{\alpha}{n}x^n} \quad x\in(-1,1), \alpha\in\mathbb{R}$$
+	
+\end{Zgled}
+\begin{Zgled}
+	Logaritemska vrsta v okolici točke 0:
+	$$\ln(x+1) = x- \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots  = \sum_{n= 1}^{\infty}{\frac{(-1)^{n+1}}{n}x^n} \quad  |x|< 1$$
+\end{Zgled}
+\section{Funkcijska zaporedja in vrste}
+\begin{Definicija}
+	Naj bo $I\subset \mathbb{R}$ interval in naj bodo $f: I \to \mathbb{R}$ funkcije za vsak $j \in \mathbb{N}$. Potem $$\{f_j: I\to \mathbb{R}\}_{j\in \mathbb{N}}$$ imenujemo \textbf{funkcijsko zaporedje}.
+\end{Definicija}
+\begin{Opomba}
+	Taylorjeva vrsta je funkcijska vrsta.
+\end{Opomba}
+\begin{Definicija}
+	Naj bo $I \subset \mathbb{R}$ interval in naj bo $\{f_n: I\to \mathbb{R}\}_{n\in \mathbb{N}}$ funkcijsko zaporedje. Pravimo, da $\{f_n\}$ \textbf{konvergira po točkah} na I, če za vsak $x\in I $ konvergira številsko zaporedje $\{f_n(x)\}_{n\in \mathbb{N}}$. V tem primeru definiramo: $$f(x) = \lim\limits_{x\to \infty}{f_n(x)} \quad \forall x\in I$$
+	in funkcijo $f:I\to \mathbb{R}$ imenujemo\textbf{ limitna funkcija}.
+\end{Definicija}
+\begin{Definicija}
+	Naj bo $I \subset \mathbb{R}$ interval in $\{f_n: I\to \mathbb{R}\}_{n\in \mathbb{N}}$ funkcijsko zaporedje. Pravimo, da funkcijsko zaporedje $\{f_n: I\to \mathbb{R}\}_{n\in \mathbb{N}}$ \textbf{enakomerno konvergira} proti funkciji $f: I \to \mathbb{R}$ na I, če za vsak $\varepsilon > 0$ , obstaja $n_0\in \mathbb{N}$, da velja $|f_n(x) -f(x)| <\varepsilon $ za vse $x\in I$ in za vse $n\ge n_0$
+\end{Definicija}
+\begin{Opomba}
+	Funkcijsko zaporedje $\{f_n\}$ konvergira po točkah na $I$ proti$f$, če velja:
+	$$\forall x\in I \quad \varepsilon > 0, \ \exists n_0\in\mathbb{N}$$, da velja $|f_n(x) -f(x)| < \varepsilon$ za vsak $n\ge n_0$.	
+\end{Opomba}
+\begin{Opomba}
+	Če zaporedje $\{f_n : I\to \mathbb{R} \}$ enakomerno konvergira proti $f: I\to \mathbb{R}$ na I, potem zaporedje $\{f_n : I\to \mathbb{R} \}$ konvergira proti $f: I \to \mathbb{R}$ po točkah na I. Obratno ni nujno res!
+\end{Opomba}
+\begin{Definicija}
+	Naj bo $\{u_n : I \to \mathbb{R} \}$ funkcijsko zaporedje na $I\subset \mathbb{R}$. Funkcijska vrsta je $$\sum_{n = 1}^{\infty}{u_n(x)}$$
+	Pravimo, da funkcijska vrsta konvergira po točkah  na $I$, če za vsak $x\in I$ konvergira številska vrsta $\int_{n=1}^{\infty}{u_n(x)}$. Pravimo, da funkcijska vrsta konvergira enakomerno na $I$, če zaporedje delnih vsot konvergira enakomerno na I.
+\end{Definicija}
+\begin{Posledica}
+	Naj bo  $\{u_n : I \to \mathbb{R} \}$ funkcijsko zaporedje zveznih funkcij na $I \subset \mathbb{R}$. Če vrsta $\sum_{n=1}^{\infty}{u_n(x)} $ konvergira enakomerno na $I$, potem je njena vsota zvezna funkcija.
+\end{Posledica}
+\begin{Izrek}
+	(Weierstrassov M-test)
+	Naj bo  $\{u_n : I \to \mathbb{R} \}$ funkcijsko zaporedje $I\subseteq \mathbb{R}$. Denimo, da obstaja zaporedje $\{c_n\}$ pozitivnih števil, da velja :
+	$$|u_n(x)| \le c_n \quad \forall n\in \mathbb{N}, \forall x\in I$$
+	Če je številska vrsta $\sum_{n=1}^{\infty}{c_n}$ konvergentna, potem je funkcijska vrsta $\sum_{n=1}^{\infty}{u_n(x)}$ enakomerno konvergentna na I (in absolutno konvergentna po točkah v I).
+\end{Izrek}
+\subsection{Potenčne vrste}
+\begin{Definicija}
+	Potenčne vrste so funkcijske vrste oblike
+	$$\sum_{n=1}^{\infty}{c_n(x-a)^n} \quad a\in\mathbb{R},\ c_n\in\mathbb{R},\ \forall n$$
+\end{Definicija}
+\begin{Opomba}
+	Če je $a =0:\quad \sum_{n= 1}^{\infty}{c_n\ x^n}$. 
+\end{Opomba}
+\begin{Opomba}
+	Taylorjeve vrste so potenčne vrste.
+\end{Opomba}
+\begin{Izrek}
+	Naj bo $\sum_{n=1}^{\infty}{c_n(x-a)^n}$ potenčna vrsta. Obstaja $R\in [a,\infty) \cup \infty$ z naslednjo lastnostjo:
+	\begin{enumerate}
+		\item
+		če je x, $|x-a| < R$, potem  $\sum_{n=1}^{\infty}{c_n(x-a)^n}$ konvergira in absolutno konvergira.
+		\item
+		če je x, $|x-a| < R$, potem  $\sum_{n=1}^{\infty}{c_n(x-a)^n}$ divergira.
+	\end{enumerate}
+	Če je $r\in (0, R)$, potem  $\sum_{n=1}^{\infty}{c_n(x-a)^n}$ na  $[a-r, a+r]$ konvergira enakomerno.
+	R imenujemo \textbf{konvergenčni polmer} potenčne vrste.
+\end{Izrek}
+\begin{Posledica}
+	Vsota potenčne vrste $\sum_{n=1}^{\infty}{c_n(x-a)^n}$ s polmerom $R > 0$ je zvezna funkcija na $(a-R, a+R)$.
+\end{Posledica}
+\begin{Izrek}
+	Dana je potenčna vrsta $\sum_{n=1}^{\infty}{c_n(x-a)^n}$. Za konvergenčni polmer velja:
+	\begin{itemize}
+		\item
+		$$\frac{1}{R} = \lim\limits_{n = \infty}{\frac{|c_{n+1}|}{|c_n|}}$$
+		če ta limita obstaja.
+		\item
+		$$\frac{1}{R} = \lim\limits_{n = \infty}{\sqrt[n]{c_n}}$$
+		če ta limita obstaja.
+	\end{itemize}
+\end{Izrek}
+\begin{Izrek}
+	Naj bo $\sum_{n=1}^{\infty}{c_n(x-a)^n}$ potenčna vrsta. Za konvergenčni polmer R velja:
+	$$\frac{1}{R} = \limsup{\sqrt[n]{|c_n|}}$$
+\end{Izrek}
+\begin{Opomba}
+	Prednost: Ta formula vedno velja, ker $\limsup_{n\to \infty}$ vedno obstaja. (Dopuščamo vrednost $\infty$).
+	\\
+	Slabost: Limite ne znamo izračunati.
+\end{Opomba}
+\subsection{Integriranje in odvajanje funkcijskih zaporedij in vrst}
+\begin{Izrek}
+	Naj bo $\{f_n :[a,b]\to \mathbb{R} \}$ funkcijsko zaporedje zveznih funkcij. Predpostavimo, da $\{f_n\}$ enakomerno na $[a.b]$ konvergira proti $f:[a,b] \to \mathbb{R}$. Potem velja:
+	$$\int_{a}^{b}{f(x)\ dx} = \int_{a}^{b}{(\lim\limits_{n\to \infty}{f_n(x)}) \ dx} = \lim\limits_{n\to \infty}{\int_{a}^{b}{f_n(x)}\ dx} $$
+\end{Izrek}
+\begin{Posledica}
+	Naj bo $\{u_n: [a,b] \to \mathbb{R}\}$ funkcijsko zaporedje zveznih funkcij in denimo, da $\sum_{n=0}^{\infty}{u_n(x)}$ konvergira enakomerno na $[a,b]$.
+\end{Posledica}
+\begin{Izrek}
+	Naj bo $\{f_n: [a,b] \to \mathbb{R}\}$ funkcijsko zaporedje zvezno odvedljivih funkcij na $[a,b]$. Denimo, da $f_n'$ konvergira enakomerno na $[a,b]$ proti $g$ in denimo, da za nek $c\in [a,b]$ številsko zaporedje $\{f_n(c) \} $ konvergira. Potem velja:
+	\\
+	Funkcijsko zaporedje $f_n$ enakomerno konvergira proti neki zvezno odvedljivi funkciji $f$ na $[a,b]$ in velja:
+	$$f'(x) = \lim\limits_{n\to \infty}{f_n'(x)}$$
+\end{Izrek}
+\begin{Posledica}
+	Naj bo $\{u_n: [a,b] \to \mathbb{R}\}$ funkcijsko zaporedje zvezno odvedljivih funkcij na $[a,b]$.
+	Denimo, da $\sum_{n=0}^{\infty}{u_n'}$ konvergira enakomerno na $[a,b]$ in da vrsta $\sum_{n=0}^{\infty}{u_n(c)}$ konvergira za nek $c\in [a,b]$. Potem $\sum_{n=0}^{\infty}{u_n}$ enakomerno konvergira na $[a,b]$, njena vsota je zvezno odvedljiva na $[a,b]$ in velja:
+	$$(\sum_{n=0}^{\infty}{u_n(x)})' = \sum_{n=0}^{\infty}{u_n'(x)}$$
+\end{Posledica}
+\begin{Izrek}
+	(Odvajanje in integriranje potenčnih vrst)
+	\\ 
+	Naj bo $\sum_{n=0}^{\infty}{a_n \ x^n}$ potenčna vrsta s konvergenčnim polmerom R. Potem imata vrsti, ki ju dobimo s členskim odvajanjem $\sum_{n=0}^{\infty}{a_n \ n\ x^{n-1}}$ in s členskim integriranjem $\sum_{n=0}^{\infty}{\frac{a_n}{n+1} \ x^{n+1}}$, tudi konvergenčni polmer R in velja:
+	\\
+	$$f(x) = \sum_{n=0}^{\infty}{a_n \ x^n} \ \textrm{potem} \ f'(x) = (\sum_{n=0}^{\infty}{a_n \ x^n})' = \sum_{n=0}^{\infty}{a_n \ n\ x^{n+1}}$$
+	
+	$$\int_{0}^{x}{f(t) \ dt} = \int_{0}^{x}{(\sum_{n=0}^{\infty}{a_n \ x^n}) \ dt} = \sum_{n=0}^{\infty}{ \int_{0}^{x}{a_n \ x^n \ dt}}= \sum_{n=0}^{\infty}{a_n \ \frac{x^{n+1}}{n+1}}$$
+\end{Izrek}
+\begin{Posledica}
+	Naj bo  $\sum_{n=0}^{\infty}{a_n \ x^n}$ potenčna vrsta s konvergenčnim polmerom R. Tedaj je njena vsota neskončnokrat odvedljiva na $(-R, R)$.
+\end{Posledica}
+\end{document}
+
