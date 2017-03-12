@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.24)  12 MAR 2017 09:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.24)  12 MAR 2017 09:37
 entering extended mode
 **"./Matematika 1 - teorija.tex"
 ("Matematika 1 - teorija.tex"
@@ -469,7 +469,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [1] [2] [3]
-Overfull \hbox (18.68738pt too wide) in paragraph at lines 251--252
+Overfull \hbox (18.68738pt too wide) in paragraph at lines 253--254
 \OT1/cmr/m/sc/10.95 Posledica \OT1/cmr/m/n/10.95 1.22\OT1/cmr/bx/n/10.95 . \OT1
 /cmr/m/it/10.95 Vsak po-li-nom sto-pnje $\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10
 .95  \OT1/cmr/m/n/10.95 1$ \OT1/cmr/m/it/10.95 ima n kom-ple-ksnih nicel ste
@@ -477,7 +477,7 @@ tih z veckratnostjo.
  []
 
 [4] [5]
-Overfull \hbox (3.99496pt too wide) in paragraph at lines 356--357
+Overfull \hbox (3.99496pt too wide) in paragraph at lines 358--359
 \OT1/cmr/m/sc/10.95 Definicija \OT1/cmr/m/n/10.95 3.4\OT1/cmr/bx/n/10.95 . \OT1
 /cmr/m/it/10.95 Zgor-nja meja za-po-redja $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/1
 0.95 a[]\OMS/cmsy/m/n/10.95 g[]$ \OT1/cmr/m/it/10.95 je zgor-nja meja mnozice 
@@ -486,70 +486,70 @@ $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 a[]; a[]; a[]; :::\OMS/cmsy/m/n/10.95
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--388
+Underfull \hbox (badness 10000) in paragraph at lines 386--390
 
  []
 
 [6] [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 566--570
+Underfull \hbox (badness 10000) in paragraph at lines 568--572
 
  []
 
 [10] [11] [12] [13] [14] [15] [16]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 874.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 876.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 874.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 876.
 
-Underfull \hbox (badness 10000) in paragraph at lines 883--888
+Underfull \hbox (badness 10000) in paragraph at lines 885--890
 
  []
 
 
-Overfull \hbox (4.64496pt too wide) in paragraph at lines 883--888
+Overfull \hbox (4.64496pt too wide) in paragraph at lines 885--890
 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10
 .95 g\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 ) = [] [] =
  [] [] = [] [] +
  []
 
 [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1045--1055
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1057
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1065--1068
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1065--1068
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1089--1089
+Underfull \hbox (badness 10000) in paragraph at lines 1091--1091
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1164--1166
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1168
 
  []
 
 [23] [24] [25]
-Overfull \hbox (6.26762pt too wide) in paragraph at lines 1289--1290
+Overfull \hbox (6.26762pt too wide) in paragraph at lines 1291--1292
 \OT1/cmr/m/sc/10.95 Opomba \OT1/cmr/m/n/10.95 7.37\OT1/cmr/bx/n/10.95 . \OT1/cm
 r/m/it/10.95 Po-goj v ne-skoncnost je go-tovo iz-pol-njen v pri-meru, ce ob-s
 taja: $[] [] \OMS/cmsy/m/n/10.95 6\OT1/cmr/m/n/10.95 =
  []
 
 [26]
-Overfull \hbox (12.525pt too wide) detected at line 1313
+Overfull \hbox (12.525pt too wide) detected at line 1315
 [][] [] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/c
 mm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95
  (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 f\OT1/cmr/m
@@ -563,14 +563,14 @@ OT1/cmr/m/n/10.95 ))
  []
 
 [27] [28] [29]
-Overfull \hbox (26.95245pt too wide) in paragraph at lines 1438--1441
+Overfull \hbox (26.95245pt too wide) in paragraph at lines 1440--1443
 \OT1/cmr/m/sc/10.95 Opomba \OT1/cmr/m/n/10.95 9.17\OT1/cmr/bx/n/10.95 . \OT1/cm
 r/m/it/10.95 Pred-nost: Ta for-mula ve-dno ve-lja, ker $[][]$ ve-dno ob-staja. 
 (Dopuscamo
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1462--1466
+Underfull \hbox (badness 10000) in paragraph at lines 1464--1468
 
  []
 
@@ -599,7 +599,7 @@ y6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Matematika 1 - teorija.pdf" (32 pages, 320738 bytes).
+Output written on "Matematika 1 - teorija.pdf" (32 pages, 321034 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
